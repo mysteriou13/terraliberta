@@ -252,6 +252,26 @@ function CreerPdcBandeau( titre, fenetre, largeur){
 	td_reduire.onmouseup = PdcBouttonOnMouseUpReduire; //Réduction de la fenetre
 	td_reduire.onmouseout = PdcBouttonOnMouseOut; //Si l'utilisateur commence son clique puis sort du "boutton" pour annuler
 		
+   
+          var td_agrandir = document.createElement("td");
+
+        td_agrandir.style.padding = "0px"
+        td_agrandir.style.backgroundColor = B_B_BCKGROUND;
+        td_agrandir.style.cursor = "pointer";
+        td_agrandir.style.width = "12px";
+        td_agrandir.style.height = "12px";
+        td_agrandir.style.border = "1px " + B_B_BORDER + " solid";
+        td_agrandir.style.fontSize = "10px";
+        td_agrandir.style.fontWeight = "bold";
+        td_agrandir.style.color = B_B_TEXT;
+
+        //On utilise les balise <center> car la propriété "text-align" ne fonctionne pas sous FF
+        td_agrandir.innerHTML = "<center>&nbsp;</center>";
+
+        td_agrandir.onmousedown = PdcBouttonOnMouseDown; //Début du clique
+        td_agrandir.onmouseup = agrandir; //agrandir de la fenetre
+        td_agrandir.onmouseout = PdcBouttonOnMouseOut; //Si l'utilisateur commence son clique puis sort du "boutton" pour annuler
+
 		
 	
 	//On créer une 3ième case pour notre tableau celle contenant le "boutton" pour fermer la fenetre
@@ -282,9 +302,9 @@ function CreerPdcBandeau( titre, fenetre, largeur){
 	tr.appendChild( td_titre);
 	//On ajoute la case "réduire" à notre ligne
 	tr.appendChild( td_reduire);
+        tr.appendChild( td_agrandir);
 	//On ajoute la case "fermer" à notre ligne
-	tr.appendChild( td_fermer);	
-	//On ajoute notre ligne au corp du tableau	
+	tr.appendChild( td_fermer);
 	bandeau_body.appendChild( tr);	
 	//On ajoute le corp au tableau au tableau
 	bandeau.appendChild( bandeau_body);
@@ -296,6 +316,7 @@ function CreerPdcBandeau( titre, fenetre, largeur){
 	td_titre.my_fenetre = fenetre;
 	td_fermer.my_fenetre = fenetre;
 	td_reduire.my_fenetre = fenetre;	
+        td_agrandir.my_fenetre = fenetre;
 
 	bandeau.titre = div;
 	
@@ -391,6 +412,21 @@ function PdcBouttonOnMouseUpReduire(){
 		this.my_fenetre.style.height = ( is_ie ? 24 : 20) + "px"; //Taille de la fenetre = taille du bandeau + bordure
 	}
 	
+}
+
+function agrandir(){
+
+   if(this.my_fenetre.style.height != "100%"){
+   this.my_fenetre.style.height = "100%";
+   this.my_fenetre.style.width = "100%";
+   this.my_fenetre.style.top = "0px";
+   this.my_fenetre.style.left = "0px"; 
+    }else{
+     this.my_fenetre.style.height = this.my_fenetre.my_height + "px";   
+     this.my_fenetre.style.width = this.my_fenetre.my_width + "px";
+  }
+   
+
 }
 
 //Double click sur le bandeau (titre) (On réduit la fenetre)
