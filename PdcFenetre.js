@@ -81,11 +81,12 @@ document.onmousedown = PdcDocumentOnMouseDown;
 document.onmouseup = PdcDocumentOnMouseUp;
  
 //Création d'un fenetre
-function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu ){
+function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url){
 		
 	//On créer un objet "Div" correspondant à notre fenetre
 	var fenetre = document.createElement("div");   
-	
+        var frame  = document.createElement("iframe");
+         frame.setAttribute("src", url);
 	//Permet d'identifier une fenetre de façon à ne pas éffectuer d'action de redimensionnement sur un élément qui n'est pas une fenetre
 	
 	fenetre.id = "PdcFenetre";
@@ -95,7 +96,7 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu ){
 	//On définit la taille et on garde la taille par défaut
 	fenetre.my_width = ((is_ie ? 4 : 0) + largeur); //+ 4 pour la bordure si IE, 0 si FF
 	fenetre.style.width = fenetre.my_width +"px"; 
-	
+         frame.style.width = fenetre.style.width;	
 	fenetre.my_height = ((is_ie ? 24 : 20) + hauteur); //+24 pour la bordure et le bandeau si IE, + 20 si FF
 	fenetre.style.height = fenetre.my_height + "px"; 
 	
@@ -124,8 +125,8 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu ){
 	var div_contenu = document.createElement("div"); 
 	
 	//On met à la taille demandé
-	div_contenu.style.width = largeur + "px";
-	div_contenu.style.height = hauteur + "px";
+	div_contenu.style.width =  "100%";
+	div_contenu.style.height = "100%;";
 	
 	//Dans le cas ou le contenu est plus grand que la div qui l'accueil, on affiche des scrollbar
 	div_contenu.style.overflow = "auto";
@@ -167,10 +168,10 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu ){
 	}
 
 	//On ajoute notre div à la fenetre
-	fenetre.appendChild( div_contenu);
-			
-	//Par défaut la fenetre est en dessous lorsque qu'une fenetre est déplacé
-	fenetre.style.zIndex = 1;
+            
+        frame.style.width = "97%"; 
+        frame.style.height = "90%";
+	fenetre.appendChild(frame);
 
 	//Met la fenetre au premier plan au moindre clique dessus.
 	fenetre.onmousedown = pdcFenetreOnClick;
@@ -362,7 +363,8 @@ function PdcFenetreOnMouseDown(e){
 	
 	//On garde l'objet fenetre (du bandeau) qui correspond à la fenetre pour laquelle on gère le déplacement
 	fenetre = this.my_fenetre;
-	
+         frame  = this.my_fenetre;	
+
 	//Annulation de l'evenement pour éviter le surlignement
 	return false;
 }
@@ -415,11 +417,18 @@ function PdcBouttonOnMouseUpReduire(){
 }
 
 function agrandir(){
-
    if(this.my_fenetre.style.height != "100%"){
    this.my_fenetre.style.height = "100%";
    this.my_fenetre.style.width = "100%";
-   this.my_fenetre.style.top = "0px";
+   this.my_fenetre.style.top = "0";
+   this.my_fenetre.style.left = "0";
+
+this.div_contenu.style.width =  this.my_fenetre.style.width;
+this.div_contenu.style.height = "100%;";
+	
+ 
+
+ this.my_fenetre.style.top = "0px";
    this.my_fenetre.style.left = "0px"; 
     }else{
      this.my_fenetre.style.height = this.my_fenetre.my_height + "px";   
