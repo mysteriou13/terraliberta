@@ -81,7 +81,7 @@ document.onmousedown = PdcDocumentOnMouseDown;
 document.onmouseup = PdcDocumentOnMouseUp;
  
 //Création d'un fenetre
-function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url){
+function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,ID){
 		
 	//On créer un objet "Div" correspondant à notre fenetre
 	var fenetre = document.createElement("div");   
@@ -89,7 +89,7 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url)
          frame.setAttribute("src", url);
 	//Permet d'identifier une fenetre de façon à ne pas éffectuer d'action de redimensionnement sur un élément qui n'est pas une fenetre
 	
-	fenetre.id = "PdcFenetre";
+	fenetre.id = ID;
 	
 	//On définit les propriétés de la fenetre
 	

@@ -12,7 +12,7 @@
 	function test(){		
 		
 		pdc = document.createElement("div");
-               CreerPdcFenetre( "google", 500, 250, 200, 150, pdc, "http://vecchionet.com:4242");
+               CreerPdcFenetre( "google", 500, 250, 200, 150, pdc, "http://vecchionet.com:4242","1");
 	        
                pdc = document.createElement("div");
                 
