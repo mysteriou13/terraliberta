@@ -190,7 +190,7 @@ function CreerPdcBandeau( titre, fenetre, largeur){
 			
 	var bandeau = document.createElement("table")
 	
-	bandeau.style.width = largeur + "px";
+	bandeau.style.width ="100%";
 	bandeau.style.height = "20px";
 	bandeau.style.backgroundColor = B_BCKGROUND;
 	bandeau.style.cursor = "move";
