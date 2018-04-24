@@ -178,10 +178,33 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,
 	
 	//On ajoute notre fenetre à la page
 	document.body.appendChild( fenetre);
-		
+
 	//et on retourne l'objet fenetre pour une utilisation éventuelle (réaffichage après fermeture par exemple)
 	return fenetre;
+
 }
+
+
+function dc(c,b,q){
+
+
+if(b == 1){
+
+
+document.location = document.URL+"?"+c+"="+q; 
+
+}
+
+if(b == 2){
+
+c = c+1
+
+ document.location = document.URL+"&"+c+"="+q;
+
+}
+
+}
+
 
 //Fonction indépendante pour la création de l'objet bandeau
 function CreerPdcBandeau( titre, fenetre, largeur){
