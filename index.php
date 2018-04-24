@@ -16,21 +16,29 @@ $p2 = explode('&',$p[1]);
 
 $p3 = count($p2);
 
-$p3 = $p3-1;
-
 $p4 = $p3-1;
 
 $p5 = $p2[1];
 
 $p6 = explode("=",$p5);
 
-$p7 = 1;
+$p7 = -1;
 
 $p8 = $p3-1;
 
+$p5 = $p2[$p7];
+
+$p6 = explode("=",$p5);
+
+$id = $p6[0];
+
+$id1 =  $p6[$p7-1];
+
+$titre = "pad".$id;
+
 $findme   = '?';
 
-$findme2 = '&';
+$findme1 = '&';
 
 $titre = "pad".$id;
 
@@ -43,6 +51,8 @@ if($pos1 == false){
 $p3 = $p3+1;
 
 }
+
+   
 
 // Notez notre utilisation de ===.  == ne fonctionnerait pas comme attendu
 // car la position de 'a' est la 0-ième (premier) caractère.
@@ -68,11 +78,10 @@ $b = 2;
 		pdc = document.createElement("div");
 <?php               
 
-$id = -1;
+ if($pos !== false){
+
 
 $f3 = ",";
-
-$f2 = '"http://vecchionet.com:9001"';
 
 while($p7 <= $p8-1){
 
@@ -82,15 +91,15 @@ $p5 = $p2[$p7];
 
 $p6 = explode("=",$p5);
 
-$id = $p6[0];
+$f2 = '"'.$p6[1].'"';
 
-$id1 =  $p6[$p7-1];
+$titre = $p6[0];
 
-$titre = "pad".$id;
-
-$f = 'CreerPdcFenetre( "'.$titre. '"'.', 500, 250, 200, 150, pdc,'.$f2.$f3.$p7.");";
+$f = 'CreerPdcFenetre( "'.$titre.'"'.', 500, 250, 200, 150, pdc,'.$f2.$f3.$p7.");";
 
 echo $f;
+
+}
 
 }
 
@@ -101,6 +110,8 @@ echo $f;
 var pad = "http://vecchionet.com:9001";
 
 var calc = "http://vecchionet.com:8000";
+
+var url = pad;
 
 function  newurl(url){
 
@@ -118,7 +129,7 @@ dc(c,c1,url);
 
 </head>
 	
-<body>
+<body onload = "test()">
 
 <button onclick = "newurl(pad)" value = "dd">cr&eacute;er un pad</button>
 
