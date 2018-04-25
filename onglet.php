@@ -65,7 +65,7 @@ document.getElementById(i).className= "onglet_y onglet";
     </div>
 
 
- </body>
+ </div>
 </html>
 
 
