@@ -19,14 +19,7 @@
             <div onclick = "changeclass(this.id)"  id = "div3" class="onglet_n onglet"> Pourquoi</div>
         </div>
         <div class="contenu">
-            <h1>Quoi?</h1>
-            Un simple syst&egrave;me d'onglet utilisant les technologies:<br />
-            <ul>
-                <li>(X)html</li>
-                <li>CSS</li>
-            </ul>
-        </div>
-    </div>
+      </div>
 
 
  </div>
