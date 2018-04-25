@@ -4,46 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Un syst&egrave;me d'onglet en html</title>
     <link type="text/css" rel="stylesheet" media="all" title="CSS" href="style.css" />
-
-<script>
-
-function onglet(){
-
-document.getElementById("div1").className= "onglet_y onglet"; 
-
-
-}
-
-function changeclass(i){
-
-document.getElementById(i).className= "onglet_y onglet"; 
-
-
-var a = 0;
-
-var b = 3;
-
-while(a < b){
-a++;
-
-var e = "div"+a;
-
-document.getElementById(e).className= "onglet_n onglet"; 
-
-}
-
-if(a == b){
-
-document.getElementById(i).className= "onglet_y onglet"; 
-
-}
-
-}
-
-
-</script>
-
+     <script></script>
 </head>
+
+<script src = "onglet.js" language = "javascript" > </script>
+
 
 <div onload = "onglet()">
 
