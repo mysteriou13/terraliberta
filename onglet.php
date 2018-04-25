@@ -46,7 +46,7 @@ document.getElementById(i).className= "onglet_y onglet";
 
 </head>
 
-<body onload = "onglet()">
+<div onload = "onglet()">
 
        <div class="onglets_html">
         <div class="onglets">
