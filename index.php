@@ -142,4 +142,7 @@ dc(c,c1,url);
 <script>
 
 </script>
+<?php 
+include("onglet.php");
+?>
 </html>
