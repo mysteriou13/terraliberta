@@ -87,6 +87,7 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,
 	var fenetre = document.createElement("div");   
         var frame  = document.createElement("iframe");
         var f1 =  document.getElementById("c");
+        var f2 =  document.createElement("div");
          frame.setAttribute("src", url);
 	//Permet d'identifier une fenetre de façon à ne pas éffectuer d'action de redimensionnement sur un élément qui n'est pas une fenetre
 	
