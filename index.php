@@ -26,7 +26,7 @@ $p7 = -1;
 
 if(!empty($_GET)){
 
-echo $p8 = $p3;
+ $p8 = $p3;
 
 }
 
