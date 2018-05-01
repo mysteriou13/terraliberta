@@ -85,135 +85,59 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,
 		
 	//On créer un objet "Div" correspondant à notre fenetre
 	var fenetre = document.createElement("div");   
-        var frame  = document.createElement("iframe");
+        var iframe  = document.createElement("iframe");
         var f1 =  document.getElementById("c");
         var f2 =  document.createElement("div");
-        f2.id = ID;
-         f2.innerHTML = "test"+ID;
+        var f3 =  document.getElementById("f");
+         
+      var length = document.getElementById('f').childNodes.length;
+
+         if(length >=1){
+         f3.src = url; 
+
+            }
+         f3.style.display = "block";
+         f2.id = ID;
+         f2.innerHTML = "test";
          f2.className = "onglet_n onglet";
+
        if(f2.id == nb){
           f2.className = "onglet_y onglet";
        }
-         f2.addEventListener("click",function ()changeclasse(nb,f2));
+
+         f2.addEventListener("click",function ()changeclasse(nb,f2,url,iframe,f3));
         f1.appendChild(f2);
 
-	//Permet d'identifier une fenetre de façon à ne pas éffectuer d'action de redimensionnement sur un élément qui n'est pas une fenetre
 	
-	fenetre.id = ID;
-	
-	//On définit les propriétés de la fenetre
-	
-	//On définit la taille et on garde la taille par défaut
-	fenetre.my_width = ((is_ie ? 4 : 0) + largeur); //+ 4 pour la bordure si IE, 0 si FF
-	fenetre.style.width = fenetre.my_width +"px"; 
-         frame.style.width = fenetre.style.width;	
-	fenetre.my_height = ((is_ie ? 24 : 20) + hauteur); //+24 pour la bordure et le bandeau si IE, + 20 si FF
-	fenetre.style.height = fenetre.my_height + "px"; 
-	
-	//Position
-	fenetre.style.position = "absolute";
-	fenetre.style.left = posLeft + "px";
-	fenetre.style.top = posTop + "px";
-	
-	//Bordure
-	fenetre.style.border = "2px " + BORDER + " solid";
-		
-	//Couleur de fond pour avoir une fenetre non transparente
-	fenetre.style.backgroundColor = BCKGROUND;
-	
-	//On créer notre bandeau
-	bandeau = CreerPdcBandeau( titre, fenetre, largeur);
-	
-	//On ajoute notre bandeau à la fentre
-	fenetre.appendChild( bandeau);
-	
-	//On garde une référence à noter bandeau
-	fenetre.bandeau = bandeau;
-		
-		
-	//On créer une div qui va accueillir notre contenu
-	var div_contenu = document.createElement("div"); 
-	
-	//On met à la taille demandé
-	div_contenu.style.width =  "100%";
-	div_contenu.style.height = "100%;";
-	
-	//Dans le cas ou le contenu est plus grand que la div qui l'accueil, on affiche des scrollbar
-	div_contenu.style.overflow = "auto";
-		
-	//Mise au couleurs personnailisé des scrollbars
-	div_contenu.style.scrollbarDarkShadowColor	=	SBDARKSHADOW;
-	div_contenu.style.scrollbar3dLightColor		=	SB3DLIGHT;
-	div_contenu.style.scrollbarArrowColor		=	SBARROW;
-	div_contenu.style.scrollbarBaseColor		=	SBBARBASE;
-	div_contenu.style.scrollbarFaceColor		=	SBBARFACE;
-	div_contenu.style.scrollbarHighlightColor	=	SBHIGHTLIGHT;
-	div_contenu.style.scrollbarShadowColor		=	SBBARSHADOW;
-	div_contenu.style.scrollbarTrackColor		=	SBBARTRACK;
-	
-	
-	
-	//On garde une référence à notre contenu pour la réduction de la fenetre
-	fenetre.contenu = div_contenu; 
-	
-	//On garde également une réference dans l'autre sens (référence à la fenetre dans contenu)
-	div_contenu.my_fenetre = fenetre;
-		
-	//Si on a du contenu on l'ajoute à la fenetre
-	if(	contenu != null ){
-	
-		//Objet
-		if( typeof( contenu) == "object" ){
-			div_contenu.appendChild( contenu);
-			
-		}
-		//Ou string (par exemple : "<a href"..."> .. </a>"
-		else{
-		
-			tmp = document.createElement("div");
-			tmp.innerHTML = contenu;
-			div_contenu.appendChild( tmp);			
-		}
-		
-	}
-
-	//On ajoute notre div à la fenetre
-            
-        frame.style.width = "97%"; 
-        frame.style.height = "90%";
-	fenetre.appendChild(frame);
-
-	//Met la fenetre au premier plan au moindre clique dessus.
-	fenetre.onmousedown = pdcFenetreOnClick;
-	
-	//On ajoute notre fenetre à la page
-
-	//et on retourne l'objet fenetre pour une utilisation éventuelle (réaffichage après fermeture par exemple)
-
 }
 
 
-function changeclasse(a,b){
+function changeclasse(a,b,c,d,e){
 
 var a1 = -1;
+
+
 
 while(a1 !=  a){
 
 a1++;
 
 if(a1 == b.id){
-  document.getElementById(a1).className = "onglet_y onglet";
+
+document.getElementById(a1).className = "onglet_y onglet";
+
+e.src =c;
 
 }else{
-
   document.getElementById(a1).className = "onglet_n onglet";
-
 }
 
 }
 
 
+
 }
+
 
 function dc(c,b,q){
 

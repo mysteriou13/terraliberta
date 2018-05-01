@@ -16,6 +16,11 @@
         <div id = "c" class="onglets">
         </div>
         <div id = "c1" class="contenu">
+
+        <iframe id  = "f"  style  = "display:none; height:100%; width:100%;">
+
+        </iframe>
+
       </div>
 
 
