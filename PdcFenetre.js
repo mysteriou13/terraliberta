@@ -45,7 +45,7 @@ COTES_REDIMENSIONNEMENT = "all"; //Cotés de la fenetre redimenssionables, "class
 
 //Constantes utilisées pour créer un masque  qui va nous permettre de savoir dans quelle(s) direction(s) le redimenssionnement doit s'effectué.
 RES_UP 		= 1;	//Redimenssionement vers le haut
-RES_DOWN 	= 2;	//Redimenssionement vers le bas
+ES_DOWN 	= 2;	//Redimenssionement vers le bas
 RES_RIGHT	= 4;	//Redimenssionement vers la droite
 RES_LEFT	= 8;	//Redimenssionement vers la gauche
 
@@ -81,14 +81,22 @@ document.onmousedown = PdcDocumentOnMouseDown;
 document.onmouseup = PdcDocumentOnMouseUp;
  
 //Création d'un fenetre
-function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,ID){
+function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,ID,nb){
 		
 	//On créer un objet "Div" correspondant à notre fenetre
 	var fenetre = document.createElement("div");   
         var frame  = document.createElement("iframe");
         var f1 =  document.getElementById("c");
         var f2 =  document.createElement("div");
-         frame.setAttribute("src", url);
+        f2.id = ID;
+         f2.innerHTML = "test"+ID;
+         f2.className = "onglet_n onglet";
+       if(f2.id == nb){
+          f2.className = "onglet_y onglet"; 
+       }
+         f2.addEventListener("click",function ()changeclasse(nb,f2));
+        f1.appendChild(f2);
+
 	//Permet d'identifier une fenetre de façon à ne pas éffectuer d'action de redimensionnement sur un élément qui n'est pas une fenetre
 	
 	fenetre.id = ID;
@@ -179,13 +187,33 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,
 	fenetre.onmousedown = pdcFenetreOnClick;
 	
 	//On ajoute notre fenetre à la page
-	document.body.appendChild( fenetre);
 
 	//et on retourne l'objet fenetre pour une utilisation éventuelle (réaffichage après fermeture par exemple)
-	return fenetre;
 
 }
 
+
+function changeclasse(a,b){
+
+var a1 = -1;
+
+while(a1 !=  a){
+
+a1++;
+
+if(a1 == b.id){
+  document.getElementById(a1).className = "onglet_y onglet";
+
+}else{
+
+  document.getElementById(a1).className = "onglet_n onglet";
+
+}
+
+}
+
+
+}
 
 function dc(c,b,q){
 

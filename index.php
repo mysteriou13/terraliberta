@@ -24,7 +24,11 @@ $p6 = explode("=",$p5);
 
 $p7 = -1;
 
-$p8 = $p3-1;
+if(!empty($_GET)){
+
+echo $p8 = $p3;
+
+}
 
 $p5 = $p2[$p7];
 
@@ -95,7 +99,7 @@ $f2 = '"'.$p6[1].'"';
 
 $titre = $p6[0];
 
-$f = 'CreerPdcFenetre( "'.$titre.'"'.', 500, 250, 200, 150, pdc,'.$f2.$f3.$p7.");";
+$f = 'CreerPdcFenetre( "'.$titre.'"'.', 500, 250, 200, 150, pdc,'.$f2.$f3.$p7.','.$p8.");";
 
 echo $f;
 

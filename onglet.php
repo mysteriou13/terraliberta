@@ -14,9 +14,6 @@
 
        <div class="onglets_html">
         <div id = "c" class="onglets">
-            <div onclick = "changeclass(this.id)"  id = "div1" class="onglet_n onglet">Quoi</div>
-            <div  onclick = "changeclass(this.id)" id = "div2" class ="onglet_n onglet">Qui</div>
-            <div onclick = "changeclass(this.id)"  id = "div3" class="onglet_n onglet"> Pourquoi</div>
         </div>
         <div class="contenu">
       </div>
