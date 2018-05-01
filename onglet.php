@@ -15,7 +15,7 @@
        <div class="onglets_html">
         <div id = "c" class="onglets">
         </div>
-        <div class="contenu">
+        <div id = "c1" class="contenu">
       </div>
 
 

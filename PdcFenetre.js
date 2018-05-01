@@ -92,7 +92,7 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,
          f2.innerHTML = "test"+ID;
          f2.className = "onglet_n onglet";
        if(f2.id == nb){
-          f2.className = "onglet_y onglet"; 
+          f2.className = "onglet_y onglet";
        }
          f2.addEventListener("click",function ()changeclasse(nb,f2));
         f1.appendChild(f2);
