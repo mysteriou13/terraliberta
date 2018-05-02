@@ -39,7 +39,7 @@ $titre = "pad".$id;
 
 $findme   = '?';
 
-$findme1 = '&';
+$findme1 = '?';
 
 $titre = "pad".$id;
 
@@ -47,11 +47,6 @@ $pos = strpos($url, $findme);
 
 $pos1 = strpos($url, $findme1); 
 
-if($pos1 == false){
-
-$p3 = $p3+1;
-
-}
 
    
 
@@ -75,6 +70,7 @@ $b = 2;
 
 <script>
 
+ 
    function test(){		
 		pdc = document.createElement("div");
 <?php               
@@ -118,7 +114,7 @@ function  newurl(url){
 
 var c = 0;
 
-c = <?php echo $p3;?>;
+c = <?php echo $p3-1;?>;
 
 var c1 = <?php echo $b;?>
 
