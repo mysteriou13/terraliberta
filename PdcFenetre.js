@@ -71,26 +71,60 @@ var u = null;
 
 var u2 = document.URL;
 
-
+if(e != 0){
 if(d == 0){
 
-u2 = "0="+c+"&";
 
-  chaine = chaine.replace(u2, "");
-  chaine = chaine.replace("1=", "0=");
+var elt = chaine.split("?");
 
+var d1 = elt[1];
+
+var q = d+1;
+
+   u2 = c+"&"+q+"=";
+
+var elt1 = chaine.split("&");
+
+var d2 = elt1[1]; 
+
+
+var elt2 = d2.split("=");
+
+var d3 = elt2[0];
+
+
+u2 = "="+c+"&"+d3;
+
+ chaine = chaine.replace(u2, "");
+
+}
+}
+
+if(d == 0){
 if(e == 0){
+var elt = chaine.split("?");
 
-  u2 = "?0="+c;
+ var d1 = elt[1];
+
+
+   u2 = "?"+d1;
+
   chaine = chaine.replace(u2, "");
-
 }
 
 }else{
 
-u2 = "&"+d+"="+c;
+
+var elt = chaine.split("&"); 
+
+
+var d1 = elt[d];
+
+
+u2 = "&"+d1;
 
 chaine = chaine.replace(u2, "");
+
 
 }
 
