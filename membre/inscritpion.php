@@ -143,4 +143,4 @@ $mysqli->query($i);
 
 
 ?>
-<a href = "../index.php" style = "display:<?php echo $display ?>">retour a l 'index.php </a>
+<a href = "../index.php" style = "display:<?php echo $display;?>;   color:black; ">retour a l 'index.php </a>
