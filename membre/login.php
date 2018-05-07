@@ -27,6 +27,8 @@ password<input type = "password" name = "pass">
 </br>
 <input type = "submit">
 </form>
+</br>
+<a style = "color:black" href = "inscritpion.php"> inscription </a>
 </center>
 <?php 
 
