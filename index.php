@@ -3,6 +3,8 @@
 <title> :: TEST PdcFenetre :: </title>		
 
 <head>		
+
+session_start();
 	
 <?php 
 
