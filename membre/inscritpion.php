@@ -111,6 +111,7 @@ $erroremail  = 0;
  ?>
 <input type = "submit">
 </form>
+<a style = " color:black" href = "login.php"> connection </a>
 </center>
 <?php 
 
