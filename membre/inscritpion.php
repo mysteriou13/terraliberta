@@ -131,6 +131,8 @@ if($total == 3){
 
 $pass = password_hash($pass,PASSWORD_DEFAULT);
 
+$pass = $mysqli->real_escape_string($pass);
+
 $display = "block";
 
 $i = 'INSERT INTO membre VALUES(NULL,"'.$pseudo.'","'.$pass.'","'.$email.'")';
