@@ -9,6 +9,10 @@ $valideemail = 0;
 $display = "none";
 
 ?>
+<center>
+<strong>
+terraliberta
+</strong>
 <form action = "<?php $_SERVER['PHP_SELF']?>" method  ="POST">
 
 inscription
@@ -107,6 +111,7 @@ $erroremail  = 0;
  ?>
 <input type = "submit">
 </form>
+</center>
 <?php 
 
   ini_set('display_errors', 1);
