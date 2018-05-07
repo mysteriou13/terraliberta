@@ -9,7 +9,7 @@
 
 <?php
 
- include("inscritpion.php");
+ include("login.php");
 
 ?>
 
