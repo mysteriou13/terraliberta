@@ -75,10 +75,10 @@ echo "pseudo ou mot de pass incorrect";
 echo "</center>";
 
 if($valide == 1){
-
+session_start();
+echo $_SESSION['pseudo'] = $pseudo;
 echo "<center>valide</center>";
 
-header("Location:index.php");
 
 }
 ?>

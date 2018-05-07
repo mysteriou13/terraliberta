@@ -4,9 +4,9 @@
 
 <head>		
 
+<?php 
 session_start();
 	
-<?php 
 
 $url = "$_SERVER[REQUEST_URI]";
 
@@ -141,8 +141,18 @@ dc(c,c1,url);
 
 </script>
 </br>
+<?php 
 
-<iframe style = " border:0px solid; height:100%; width:100%;"src="./membre/login.php">
+if(!isset($_SESSION['pseudo'])){
+$display = "block";
+}else{
+
+$display = "none";
+
+}
+
+?>
+<iframe  style = " border:0px solid; height:100%; width:100%; display:<?php echo $display;?>"src="./membre/login.php">
 
 </iframe> 
 <?php
