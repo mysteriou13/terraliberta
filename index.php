@@ -1,6 +1,8 @@
 <html>
 
-<title> :: TEST PdcFenetre :: </title>		
+<title> terraliberta </title>		
+
+<link rel = "stylesheets" href = "style.css">
 
 <head>		
 
@@ -8,6 +10,8 @@
 session_start();
 	
 ?>
+
+
 </head>
 	
 <body onload = "test()">
