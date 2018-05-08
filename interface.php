@@ -130,7 +130,10 @@ dc(c,c1,url);
 
 <?php 
 
+if(!empty($_GET)){
+
 include("onglet.php");
 
+}
 ?>
 </body>	
