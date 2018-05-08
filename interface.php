@@ -121,12 +121,18 @@ dc(c,c1,url);
 
 </head>
  <body onload = "test()">
-	
+
+<div style = "display:flex">
+
+<div>	
 <button onclick = "newurl(pad)" value = "dd">cr&eacute;er un pad</button>
+</div>
 
-</br>
-
+<div>
 <button onclick = "newurl(calc)" value = "dd"> cr&eacute;er un tableur</button>
+</div>
+
+</div>
 
 <?php 
 
