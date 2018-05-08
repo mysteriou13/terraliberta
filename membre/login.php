@@ -76,9 +76,9 @@ echo "</center>";
 
 if($valide == 1){
 session_start();
-echo $_SESSION['pseudo'] = $pseudo;
-echo "<center>valide</center>";
+ $_SESSION['pseudo'] = $pseudo;
 
+header("Location:../index.php");
 
 }
 ?>

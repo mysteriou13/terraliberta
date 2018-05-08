@@ -36,7 +36,7 @@ $display = "none";
 if($display == "none"){
 
 
-header("Location:interface.php");
+include("interface.php");
 
 }
 
