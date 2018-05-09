@@ -1,6 +1,8 @@
 
 <?php
 
+include_once("../connect/connect.php");
+
 $url = "$_SERVER[REQUEST_URI]";
 
 $p = explode("?",$url);
@@ -21,6 +23,7 @@ $p7 = -1;
 
  $p8 = $p3-1;
 
+$p9  = -1;
 
 $p5 = $p2[$p7];
 
@@ -42,11 +45,44 @@ $pos = strpos($url, $findme);
 
 $pos1 = strpos($url, $findme1); 
 
+$pseudo = $mysqli->real_escape_string($_SESSION['pseudo']);
 
-   
+if(!empty($_GET)){
 
-// Notez notre utilisation de ===.  == ne fonctionnerait pas comme attendu
-// car la position de 'a' est la 0-ième (premier) caractère.
+ while($p9 <= $p8-1){
+
+$p9++;
+
+$p5 = $p2[$p9];
+
+$p6 = explode("=",$p5);
+
+$f2 = '"'.$p6[1].'"';
+
+$titre = $p6[0];
+
+$lien = $p6[1];
+
+$lien = $mysqli->real_escape_string($lien);
+
+$url = "SELECT COUNT(*)url FROM url WHERE pseudo= '$pseudo' AND url = '$lien'";
+
+$url1  = $mysqli->query($url);
+
+$url2 = $url1->fetch_assoc();
+
+if($url2['url'] == 0){
+
+$i = 'INSERT INTO url VALUES(NULL, "'.$pseudo.'", "'.$lien.'")';
+
+$mysqli->query($i);
+
+}
+
+}
+
+}   
+
 if ($pos === false) {
 
 $b = 1;
