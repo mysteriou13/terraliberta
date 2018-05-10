@@ -171,14 +171,15 @@ dc(c,c1,url);
 </div>
 
 <div style = "display:flex;">
+
+<div>
 <?php 
-
 include("./membre/menu.php");
+?>
 
+<?php
 if(!empty($_GET)){
-
 include("onglet.php");
-
 
 }
 ?>
