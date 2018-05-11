@@ -21,7 +21,7 @@ $p6 = explode("=",$p5);
 
 $p7 = -1;
 
- $p8 = $p3-1;
+$p8 = $p3-1;
 
 $p9  = -1;
 
@@ -47,41 +47,13 @@ $pos1 = strpos($url, $findme1);
 
 $pseudo = $mysqli->real_escape_string($_SESSION['pseudo']);
 
-if(!empty($_GET)){
+$c = null;
 
- while($p9 <= $p8-1){
+$name = 0;
 
-$p9++;
+$id = 0;
 
-$p5 = $p2[$p9];
-
-$p6 = explode("=",$p5);
-
-$f2 = '"'.$p6[1].'"';
-
-$titre = $p6[0];
-
-$lien = $p6[1];
-
-$lien = $mysqli->real_escape_string($lien);
-
-$url = "SELECT COUNT(*)url FROM url WHERE pseudo= '$pseudo' AND url = '$lien'";
-
-$url1  = $mysqli->query($url);
-
-$url2 = $url1->fetch_assoc();
-
-if($url2['url'] == 0){
-
-$i = 'INSERT INTO url VALUES(NULL, "'.$pseudo.'", "'.$lien.'")';
-
-$mysqli->query($i);
-
-}
-
-}
-
-}   
+$nbl = -1;
 
 if ($pos === false) {
 
@@ -158,21 +130,165 @@ dc(c,c1,url);
 </head>
  <body onload = "test()">
 
-<div style = "display:flex">
+<div style = "display:flex;">
 
 <div>	
-<button onclick = "newurl(pad)" value = "dd">cr&eacute;er un pad</button>
+<form  action = "<?php $_SERVER['PHP_SELF'];?>" method = "post">
+ nom du pad  <input type = "text" name = "idpad">
+
+</br>
+<input type =  "submit" value = "cr&eacute;er un pad">
+
+<?php 
+
+$b = "SELECT COUNT(*)pseudo FROM url WHERE pseudo= '$pseudo'";
+
+$b1 = $mysqli->query($b);
+
+$b2  = $b1->fetch_assoc();
+
+$b3 = $b2['pseudo'];
+
+if(isset($_POST['idpad']) && !empty($_POST['idpad'])){
+
+
+echo "</br>";
+
+
+$c =$_POST['idpad'].$_SESSION['pseudo'].$b3; 
+
+echo "<script>";
+
+echo "var titre ='$c';";
+
+echo "var i = pad+/p/+titre;";
+
+echo "newurl(i)";
+
+echo "</script>";
+
+}
+
+if(isset($_POST['idpad']) && empty($_POST['idpad'])){
+
+echo "</br>nom de pad  vide";
+
+}
+
+
+
+?>
+
+</form>
+
 </div>
+
 
 <div>
-<button onclick = "newurl(calc)" value = "dd"> cr&eacute;er un tableur</button>
-</div>
+
+<form action = "<?php $_SERVER['PHP_SELF']?>" method = "post">
+ nom du calc  <input type = "text" name = "idcalc">
+</br>
+<input type = "submit" value = "cr&eacute;er un tableur"> 
+
+<?php 
+
+if(isset($_POST['idcalc']) && !empty($_POST['idcalc'])){
+
+echo "</br>";
+
+
+$c =$_POST['idcalc'].$_SESSION['pseudo'].$b3;
+
+echo "<script>";
+
+echo "var titre ='$c';";
+
+echo "var i = calc+'/'+titre;";
+
+echo "newurl(i)";
+
+echo "</script>";
+
+}
+
+
+?>
+
+</form>
 
 </div>
+</div>
+<?php 
+
+if(!empty($_GET)){
+
+ while($p9 <= $p8-1){
+
+$p9++;
+
+$p5 = $p2[$p9];
+
+$p6 = explode("=",$p5);
+
+$f2 = '"'.$p6[1].'"';
+
+$titre = $p6[0];
+
+$lien = $p6[1];
+
+$lien = $mysqli->real_escape_string($lien);
+
+$url = "SELECT COUNT(*)url FROM url WHERE pseudo= '$pseudo' AND url = '$lien'";
+
+$url1  = $mysqli->query($url);
+
+$url2 = $url1->fetch_assoc();
+
+$c =$p6[1];
+
+$l = array('http://vecchionet.com:9001/p/','http://vecchionet.com:8000/');
+
+$l1 =  count($l);
+
+while($nbl <= $l1){
+
+$nbl++;
+
+$l2 = $l[$nbl];
+
+$l3 = substr_count($lien,$l2);
+
+
+if($l3 == 1){
+
+$l4 = str_replace($l2,"",$lien);
+
+$l5 = str_replace($pseudo,"",$l4);
+
+$l6  = str_replace($b3['pseudo'],"",$l5);
+
+}
+
+
+}
+
+if($url2['url'] == 0){
+
+$i = 'INSERT INTO url VALUES(NULL, "'.$pseudo.'", "'.$lien.'", "'.$l6.'")';
+
+$mysqli->query($i);
+
+}
+
+}
+
+}?>
 
 <div style = "display:flex;">
 
 <div>
+</br>
 <?php 
 include("./membre/menu.php");
 ?>

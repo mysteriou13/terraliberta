@@ -1,6 +1,6 @@
 <div id = "menu">
 menu
-
+</br>
 <?php
 
 $nb = 0;
@@ -19,7 +19,8 @@ $urla = "$_SERVER[REQUEST_URI]";
 
 if($a == 0){
 
-echo "<button onclick = newurl(this.id) id =";echo $a1; echo ">";echo "afficher &nbsp;"; echo $a1; echo "</button>"; 
+echo "<button onclick = newurl(this.id) id =";echo $a1; echo ">"; 
+echo $affiche3['name']; echo "</button>"; 
 
 }
 
