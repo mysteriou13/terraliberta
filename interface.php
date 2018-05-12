@@ -95,8 +95,16 @@ $f2 = '"'.$p6[1].'"';
 
 $titre = $p6[0];
 
-$f = 'CreerPdcFenetre( "'.$titre.'"'.', 500, 250, 200, 150, pdc,'.$f2.$f3.$p7.','.$p8.");";
+$titre2 = $p6[1];
 
+    $select = "SELECT * FROM url  WHERE url = '$titre2'";
+$select1 = $mysqli->query($select);
+
+$select2 = $select1->fetch_assoc();
+
+$select3 = $select2['name'];
+
+$f = 'CreerPdcFenetre( "'.$titre.'"'.', 500, 250, 200, 150, pdc,'.$f2.$f3.$p7.','.$p8.",'$select3');";
 echo $f;
 
 }
@@ -129,7 +137,18 @@ dc(c,c1,url);
 
 </head>
  <body onload = "test()">
+<?php
 
+$select = "SELECT * FROM url WHERE pseudo = '$pseudo'";
+
+$select1 = $mysqli->query($select);
+
+$select2 = $select1->fetch_assoc();
+
+$select3 = $select2['name'];
+
+
+?>
 <div style = "display:flex;">
 
 <div>	

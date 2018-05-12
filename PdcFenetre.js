@@ -1,4 +1,4 @@
-function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,ID,nb){
+function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,ID,nb,name){
 		
 	//On créer un objet "Div" correspondant à notre fenetre
 	var fenetre = document.createElement("div");   
@@ -11,7 +11,7 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,
         var f6 = document.createElement("span");
 
         var length = document.getElementById('f').childNodes.length;
-        f4.innerHTML = "test";
+        f4.innerHTML = name;
         f5.innerHTML = "x";
         f6.innerHTML = "&nbsp;&nbsp; &nbsp;";
         if(length >=1){

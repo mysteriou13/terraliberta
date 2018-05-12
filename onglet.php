@@ -11,7 +11,6 @@
 
 
 <div onload = "onglet()">
-
        <div class="onglets_html">
         <div id = "c" class="onglets">
         </div>
