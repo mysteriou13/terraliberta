@@ -55,6 +55,8 @@ $id = 0;
 
 $nbl = -1;
 
+$type = null;
+
 if ($pos === false) {
 
 $b = 1;
@@ -97,7 +99,7 @@ $titre = $p6[0];
 
 $titre2 = $p6[1];
 
-    $select = "SELECT * FROM url  WHERE url = '$titre2'";
+$select = "SELECT * FROM url  WHERE url = '$titre2'";
 $select1 = $mysqli->query($select);
 
 $select2 = $select1->fetch_assoc();
@@ -304,6 +306,18 @@ $l5 = str_replace($pseudo,"",$l4);
 
 $l6  = str_replace($b3['pseudo'],"",$l5);
 
+if($l2 == $l[0]){
+
+$type = "pad";
+
+}
+
+if($l2 == $l[1]){
+
+$type = "calc";
+
+}
+
 }
 
 
@@ -311,7 +325,9 @@ $l6  = str_replace($b3['pseudo'],"",$l5);
 
 if($url2['url'] == 0){
 
-$i = 'INSERT INTO url VALUES(NULL, "'.$pseudo.'", "'.$lien.'", "'.$l6.'")';
+$type = $mysqli->real_escape_string($type);
+
+$i = 'INSERT INTO url VALUES(NULL, "'.$pseudo.'", "'.$lien.'", "'.$l6.'","'.$type.'")';
 
 $mysqli->query($i);
 
