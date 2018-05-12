@@ -151,7 +151,7 @@ $select3 = $select2['name'];
 
 
 ?>
-<div style = "display:flex;">
+<div style = "display:flex; border:1px solid;  margin-bottom:2%;">
 
 <div>	
 <form  action = "<?php $_SERVER['PHP_SELF'];?>" method = "post">
@@ -207,7 +207,7 @@ echo $_POST['idpad']." exsite d&eacute;j&agrave;"."</br>";
 </div>
 
 
-<div>
+<div style = "">
 
 <form action = "<?php $_SERVER['PHP_SELF']?>" method = "post">
  nom du calc  <input type = "text" name = "idcalc">
@@ -340,11 +340,12 @@ $mysqli->query($i);
 <div style = "display:flex;">
 
 <div>
-</br>
 <?php 
 include("./membre/menu.php");
 ?>
+</div>
 
+<div>
 <?php
 if(!empty($_GET)){
 include("onglet.php");
@@ -352,4 +353,7 @@ include("onglet.php");
 }
 ?>
 </div>
+
+</div>
+
 </body>	
