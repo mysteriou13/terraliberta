@@ -156,21 +156,24 @@ $select3 = $select2['name'];
  nom du pad  <input type = "text" name = "idpad">
 
 </br>
-<input type =  "submit" value = "cr&eacute;er un pad">
 
 <?php 
 
-$b = "SELECT COUNT(*)pseudo FROM url WHERE pseudo= '$pseudo'";
+
+
+if(isset($_POST['idpad']) && !empty($_POST['idpad'])){
+
+$pad = $_POST['idpad']; 
+
+ $b = "SELECT COUNT(*)pseudo FROM url WHERE name= '$pad'";
 
 $b1 = $mysqli->query($b);
 
 $b2  = $b1->fetch_assoc();
 
-$b3 = $b2['pseudo'];
+$b3 = $b2['name'];
 
-if(isset($_POST['idpad']) && !empty($_POST['idpad'])){
-
-
+if($b3 == 0){
 echo "</br>";
 
 
@@ -186,17 +189,16 @@ echo "newurl(i)";
 
 echo "</script>";
 
-}
+}else{
 
-if(isset($_POST['idpad']) && empty($_POST['idpad'])){
-
-echo "</br>nom de pad  vide";
+echo $_POST['idpad']." exsite d&eacute;j&agrave;"."</br>";
 
 }
-
-
+}
 
 ?>
+
+ <input type =  "submit" value = "cr&eacute;er un pad">
 
 </form>
 
@@ -214,9 +216,20 @@ echo "</br>nom de pad  vide";
 
 if(isset($_POST['idcalc']) && !empty($_POST['idcalc'])){
 
+$pad = $_POST['idcalc'];
+
+ $b = "SELECT COUNT(*)pseudo FROM url WHERE name= '$pad'";
+
+$b1 = $mysqli->query($b);
+
+$b2  = $b1->fetch_assoc();
+
+$b3 = $b2['name'];
+
+
 echo "</br>";
 
-
+if($b3 == 0){
 $c =$_POST['idcalc'].$_SESSION['pseudo'].$b3;
 
 echo "<script>";
@@ -229,8 +242,12 @@ echo "newurl(i)";
 
 echo "</script>";
 
-}
+}else{
 
+echo $_POST['idcalc']." exsite d&eacute;j&agrave;"."</br>";
+
+}
+}
 
 ?>
 
