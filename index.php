@@ -19,7 +19,6 @@ session_start();
 <script>
 
 </script>
-</br>
 <?php 
 
 if(!isset($_SESSION['pseudo'])){
