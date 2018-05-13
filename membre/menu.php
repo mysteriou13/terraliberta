@@ -68,6 +68,12 @@ if($a == 0){
 echo "<div><button onclick = newurl(this.id) id =";echo $a1; echo ">";              
 echo $affiche3['name']; echo "</button></div>";                                     
 
+}else{
+
+echo "<div><button  id =";echo $a1; echo ">";
+echo $affiche3['name']; echo "</button></div>";
+
+
 }                                                                                   
 
 }
