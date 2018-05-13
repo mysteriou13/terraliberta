@@ -1,7 +1,7 @@
 <div id = "menu" style = "margin-right:10%;">
 
 <div style = "border:1px solid black;">
-liste des pad
+liste des fichier text
 
 <div>
 
