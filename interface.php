@@ -153,9 +153,17 @@ $select3 = $select2['name'];
 ?>
 <div style = "display:flex; border:1px solid;  margin-bottom:2%;">
 
-<div>	
+
+<div style = "border:1px solid;  margin-right:2%; ">
+	
 <form  action = "<?php $_SERVER['PHP_SELF'];?>" method = "post">
- nom du pad  <input type = "text" name = "idpad">
+<div>
+créer un   fichier text colaboratif
+</div>
+
+<div>
+ nom du fichier text  <input type = "text" name = "idpad">
+</div>
 
 </br>
 
@@ -207,10 +215,18 @@ echo $_POST['idpad']." exsite d&eacute;j&agrave;"."</br>";
 </div>
 
 
-<div style = "">
+<div style = "border:1px solid;">
 
 <form action = "<?php $_SERVER['PHP_SELF']?>" method = "post">
- nom du calc  <input type = "text" name = "idcalc">
+
+<div>
+cr&eacute;er un tableur
+</div>
+
+<div>
+ nom du tableur  <input type = "text" name = "idcalc">
+</div>
+
 </br>
 <input type = "submit" value = "cr&eacute;er un tableur"> 
 
@@ -252,6 +268,7 @@ echo $_POST['idcalc']." exsite d&eacute;j&agrave;"."</br>";
 }
 
 ?>
+
 
 </form>
 
