@@ -16,7 +16,7 @@
         </div>
         <div id = "c1" class="contenu">
 
-        <iframe id  = "f" style  = "display:none; height:100%; width:100%;">
+        <iframe id  = "f" style  = "border:1px solid; height:100%; width:90%;">
         </iframe>
 
       </div>

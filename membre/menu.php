@@ -1,4 +1,4 @@
-<div id = "menu" >
+<div id = "menu" style = "margin-right:10%;">
 
 <div style = "border:1px solid black;">
 liste des pad
@@ -26,6 +26,10 @@ if($a == 0){
 echo "<div><button onclick = newurl(this.id) id =";echo $a1; echo ">"; 
 echo $affiche3['name']; echo "</button></div>"; 
 
+}else{
+echo "<div><button  id =";echo $a1; echo ">";
+echo $affiche3['name']; echo "</button></div>";
+
 }
 
 }
@@ -37,6 +41,7 @@ echo $affiche3['name']; echo "</button></div>";
 </div>
 
 </br>
+
 
    <div style = "border:1px solid black">
 <div>
