@@ -208,7 +208,9 @@ echo $_POST['idpad']." exsite d&eacute;j&agrave;"."</br>";
 
 ?>
 
+<center>
  <input type =  "submit" value = "cr&eacute;er un pad">
+</center>
 
 </form>
 
