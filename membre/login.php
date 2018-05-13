@@ -5,6 +5,8 @@ include("../../connect/connect.php");
 
 ?>
 
+<div style  = "position:absolute; top:20%; left:40%;">
+
 <form action = "<?php $_SERVER['PHP_SELF']?>" method = "POST">
 
 <center>
@@ -27,6 +29,8 @@ password<input type = "password" name = "pass">
 </br>
 <input type = "submit">
 </form>
+
+
 </br>
 <a style = "color:black" href = "inscritpion.php"> inscription </a>
 </center>
@@ -82,3 +86,5 @@ header("Location:../index.php");
 
 }
 ?>
+
+</div>
