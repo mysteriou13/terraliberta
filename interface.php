@@ -230,8 +230,10 @@ cr&eacute;er un tableur
 </div>
 
 </br>
-<input type = "submit" value = "cr&eacute;er un tableur"> 
 
+<center>
+<input type = "submit" value = "cr&eacute;er un tableur"> 
+</center>
 <?php 
 
 if(isset($_POST['idcalc']) && !empty($_POST['idcalc'])){
