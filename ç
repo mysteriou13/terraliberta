@@ -10,16 +10,17 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,
         var f5 = document.createElement("button");
         var f6 = document.createElement("span");
         var f7 = document.createElement("div");
-        var f8 = document.createElement("button");  
-        var f9 = document.createElement("div");
-
+        var f8 =  document.createElement("input");
+        var f9 = document.createElement("button");         
         var length = document.getElementById('f').childNodes.length;
         f4.innerHTML = name;
         f5.innerHTML = "x";
         f6.innerHTML = "&nbsp;&nbsp; &nbsp;";
-        f7.innerHTML = "envoyer ce lien pour partage le document";
-        f8.innerHTML = "copier le lien dans le press papier";
-        f9.innerHTML = url;
+        f7.innerHTML = "test";
+        f9.innerHTML = "copier";
+        f8.type = "text";
+        f8.id  = ID;
+        f8.value = ID;
         if(length >=1){
          f3.src = url; 
 
@@ -35,31 +36,28 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,
         f2.addEventListener("click",function ()changeclasse(nb,f2,url,iframe,f3));
         f4.addEventListener("click",function ()changeclasse(nb,f2,url,iframe,f3));
         f5.addEventListener("click",function () supelemet(f2,f4,url,ID,nb)); 
-        f8.addEventListener("click", function () myFunction(f3.src)); 
+        f9.addEventListener("click", function () myFunction(url)); 
         f1.appendChild(f2);
         f2.appendChild(f4);
         f2.appendChild(f6);
         f2.appendChild(f5);
         f2.appendChild(f7);
-        f7.appendChild(f9);
         f7.appendChild(f8);
+        f7.appendChild(f9);
 }
 
 
 function myFunction(i) {
 
-  var copyText = document.createElement("input");
-   copyText.type = "text";  
-   copyText.value  = i;
-   copyText.id = "t";
-
-   document.body.appendChild(copyText);
-   var copyText = document.getElementById("t");
+  var copyText = document.getElementById("myInput");
+      copyText.value = i;
   copyText.select();
   document.execCommand("Copy");
-  document.body.removeChild(copyText);
+  alert(copyText.value);
 
 }
+
+
 
 function changeclasse(a,b,c,d,e){
 
