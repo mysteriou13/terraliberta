@@ -12,14 +12,18 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,
         var f7 = document.createElement("div");
         var f8 = document.createElement("button");  
         var f9 = document.createElement("div");
+        var f10 = document.createElement("button");
 
         var length = document.getElementById('f').childNodes.length;
         f4.innerHTML = name;
         f5.innerHTML = "x";
         f6.innerHTML = "&nbsp;&nbsp; &nbsp;";
         f7.innerHTML = "envoyer ce lien pour partage le document";
+        f7.style.display = "none";
         f8.innerHTML = "copier le lien dans le press papier";
         f9.innerHTML = url;
+        f10.innerHTML = "partager";
+
         if(length >=1){
          f3.src = url; 
 
@@ -36,15 +40,30 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,
         f4.addEventListener("click",function ()changeclasse(nb,f2,url,iframe,f3));
         f5.addEventListener("click",function () supelemet(f2,f4,url,ID,nb)); 
         f8.addEventListener("click", function () myFunction(f3.src)); 
+        f10.addEventListener("click", function () block(f7) );
         f1.appendChild(f2);
         f2.appendChild(f4);
         f2.appendChild(f6);
         f2.appendChild(f5);
+        f2.appendChild(f10);
         f2.appendChild(f7);
         f7.appendChild(f9);
         f7.appendChild(f8);
+
 }
 
+function block (a){
+
+if(a.style.display == "none"){
+
+a.style.display = "block";
+
+}else{
+
+ a.style.display = "none";
+}
+
+}
 
 function myFunction(i) {
 
