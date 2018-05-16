@@ -1,3 +1,10 @@
+<?php 
+
+$f = "./installcons.php";
+
+include($f);
+
+?>
 <html>
 
 <title> terraliberta </title>		
@@ -8,6 +15,7 @@
 
 <?php 
 session_start();
+
 	
 ?>
 
@@ -26,6 +34,8 @@ $display = "block";
 }else{
 
 $display = "none";
+
+echo FOO;
 
 }
 

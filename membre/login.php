@@ -82,6 +82,7 @@ if($valide == 1){
 session_start();
  $_SESSION['pseudo'] = $pseudo;
 
+
 header("Location:../index.php");
 
 }
