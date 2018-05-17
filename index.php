@@ -40,7 +40,6 @@ $display = "block";
 
 $display = "none";
 
-echo FOO;
 
 }
 

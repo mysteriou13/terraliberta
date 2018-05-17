@@ -1,7 +1,10 @@
 
 <?php 
 
- include_once("./install/installcons.php"); 
+include_once("../install/installcons.php");
+
+include_once("../connect.php");
+
 
 ?>
 
