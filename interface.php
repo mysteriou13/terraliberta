@@ -11,6 +11,8 @@ header("Location:index.php");
 
 include_once("./install/installcons.php");
 
+include_once("./connect.php");
+
 $url = "$_SERVER[REQUEST_URI]";
 
 $p = explode("?",$url);

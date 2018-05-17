@@ -94,6 +94,8 @@ $mysqli->query($auto);
 
 $mysqli->query($auto1);
 
+header("Location: ../index.php");
+
 }
 
 }
