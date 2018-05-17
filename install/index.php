@@ -24,7 +24,6 @@ $install ="installcons.php";
 
 if(file_exists($install)){
 
-echo "install";
 
 }else{
 
@@ -33,7 +32,7 @@ echo "install";
 
 $debut = "<?php ";
 
-if(isset($_POST)){
+if(!empty($_POST)){
 $server = " const server = '".$_POST['server']."'";
 
 $server = htmlspecialchars($_POST['server']);
@@ -58,6 +57,7 @@ echo "error connection";
 
 }else{
 
+
 $debut  = "<?php\n";
 
 $fin = " ?>\n";
@@ -74,12 +74,25 @@ $install ="installcons.php";
 
 $file = $debut.$server.$data.$login.$pass.$fin;
   
-$fp = fopen('./installcons.php', 'w+');
+$fp = fopen('installcons.php', 'w+');
 
 fwrite($fp, $file);
 fclose($fp);
 
-echo "connect valide";
+$table = "CREATE TABLE `url` (`id` int(11) NOT NULL,`pseudo` text NOT NULL, `url` text NOT NULL,`name` text NOT NULL,`type` text NOT NULL) 
+ENGINE=InnoDB DEFAULT CHARSET=latin1;
+";
+
+$auto = "ALTER TABLE `url` ADD PRIMARY KEY (`id`);";
+
+$auto1 ="ALTER TABLE `url`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;";
+
+$mysqli->query($table);
+
+$mysqli->query($auto);
+
+$mysqli->query($auto1);
 
 }
 

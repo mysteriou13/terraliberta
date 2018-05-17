@@ -28,6 +28,11 @@ session_start();
 
 </script>
 <?php 
+if(!file_exists("./install/installcons.php")){
+
+header("Location:./install");
+
+}
 
 if(!isset($_SESSION['pseudo'])){
 $display = "block";

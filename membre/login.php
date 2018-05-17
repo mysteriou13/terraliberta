@@ -1,7 +1,7 @@
 
 <?php 
 
-include("../../connect/connect.php");
+ include_once("./install/installcons.php"); 
 
 ?>
 
