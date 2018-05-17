@@ -1,7 +1,7 @@
 
 <?php 
 
-include("../../connect/connect.php");
+ include_once("./install/installcons.php"); 
 
 ?>
 
@@ -81,6 +81,7 @@ echo "</center>";
 if($valide == 1){
 session_start();
  $_SESSION['pseudo'] = $pseudo;
+
 
 header("Location:../index.php");
 

@@ -1,3 +1,10 @@
+<?php 
+
+$f = "./installcons.php";
+
+include($f);
+
+?>
 <html>
 
 <title> terraliberta </title>		
@@ -8,6 +15,7 @@
 
 <?php 
 session_start();
+
 	
 ?>
 
@@ -20,12 +28,19 @@ session_start();
 
 </script>
 <?php 
+if(!file_exists("./install/installcons.php")){
+
+header("Location:./install");
+
+}
 
 if(!isset($_SESSION['pseudo'])){
 $display = "block";
 }else{
 
 $display = "none";
+
+echo FOO;
 
 }
 

@@ -9,7 +9,7 @@ header("Location:index.php");
 
 }
 
-include_once("../connect/connect.php");
+include_once("./install/installcons.php");
 
 $url = "$_SERVER[REQUEST_URI]";
 
