@@ -8,7 +8,7 @@ include_once("../connect.php");
 
 ?>
 
-<div style  = "position:absolute; top:20%; left:40%;">
+<div style  = "position:absolute; top:20%; left:15%;">
 
 <form action = "<?php $_SERVER['PHP_SELF']?>" method = "POST">
 
@@ -17,9 +17,11 @@ include_once("../connect.php");
 <strong>
 
 terraliberta
-
 </strong>
-
+</br>
+ permet d’afficher sur une même page différents sites web ou outils collaboratifs en ligne.
+</br>
+Vous pouvez ainsi présenter, communiquer et travailler à plusieurs sur différents documents en même temps:
 
 </br>
 connection
@@ -30,7 +32,7 @@ pseudo<input type = "text" name = "pseudo">
 
 password<input type = "password" name = "pass">
 </br>
-<input type = "submit">
+<input type = "submit" value = "connection">
 </form>
 
 
