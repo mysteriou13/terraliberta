@@ -8,6 +8,10 @@ $validepass = 0;
 $valideemail = 0;
 $display = "none";
 
+$date = date("dmY");
+
+$date = $mysqli->real_escape_string($date);
+
 ?>
 <center>
 <strong>
@@ -115,7 +119,6 @@ $erroremail  = 0;
 </center>
 <?php 
 
-  ini_set('display_errors', 1);
 
 $fichier = '../../connect/connect.php';
 
@@ -141,14 +144,27 @@ $pass = $mysqli->real_escape_string($pass);
 
 $display = "block";
 
-$i = 'INSERT INTO membre VALUES(NULL,"'.$pseudo.'","'.$pass.'","'.$email.'")';
+$date = date("d").date("m").date("y");
+
+$date = $mysqli->real_escape_string($date);
+
+$i = 'INSERT INTO membre VALUES(NULL,"'.$pseudo.'","'.$pass.'","'.$email.'","'.$date.'")';
+
+ $moth = date("m")+1; 
+
+ $date = date("d").$moth.date("y");
+
+ $date = $mysqli->real_escape_string($date);
+
+$ebo = 'INSERT INTO  ebo VALUES(NULL,"'.$pseudo.'","'.$date.'")';
 
 $mysqli->query($i);
 
- echo "inscription reussi";
+$mysqli->query($ebo);
+
+header("Location:../index.php");
 
 }
 
 
 ?>
-<a href = "../index.php" style = "display:<?php echo $display;?>;   color:black; ">retour a l 'index.php </a>

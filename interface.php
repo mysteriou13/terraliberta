@@ -164,7 +164,6 @@ $select3 = $select2['name'];
 
   
 <a href = "deconnection.php" style = "color:black"> deconnection </a>
-
 <div style = "display:flex; border:1px solid;  margin-bottom:2%;">
 
 

@@ -41,22 +41,46 @@ password<input type = "password" name = "pass">
 </center>
 <?php 
 
+$date = date("dmY");
+
+ $d = "SELECT date FROM membre  WHERE pseudo = 'mysteriou'";
+
+$d2 = $mysqli->query($d);
+
+$d3 = $d2->fetch_assoc();
+
 if(isset($_POST['pseudo']) && !empty($_POST['pseudo'])){
 
 $pseudo = $mysqli->real_escape_string($_POST['pseudo']);
 
 $pass = $mysqli->real_escape_string($_POST['pass']);
 
-$pass =  $_POST['pass'];;
+$pass =  $_POST['pass'];
 
 $valide = 0;
 
-$i = "SELECT COUNT(*)pseudo FROM membre pseudo WHERE pseudo = '$pseudo'";
+$abo = 0;
+
+
+$i = "SELECT COUNT(*)pseudo FROM membre WHERE pseudo = '$pseudo'";
 
 $i2  = $mysqli->query($i);
 
 $i3 = $i2->fetch_assoc();
 
+
+$d = "SELECT date FROM membre  WHERE pseudo = '$pseudo'";
+
+$d2 = $mysqli->query($d);
+
+$d3 = $d2->fetch_assoc();
+
+
+if($date <= $d3['date']){
+
+$abo = 1;
+
+}
 
 $login = "SELECT pass FROM membre WHERE pseudo = '$pseudo'";
 
@@ -83,7 +107,7 @@ echo "pseudo ou mot de pass incorrect";
 }
 echo "</center>";
 
-if($valide == 1){
+if($valide == 1 && $abo == 1){
 session_start();
  $_SESSION['pseudo'] = $pseudo;
 
