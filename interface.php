@@ -165,7 +165,7 @@ $select3 = $select2['name'];
   
 <a href = "deconnection.php" style = "color:black"> deconnection </a>
 </br>
-<a href = "./parametre..php" style = "color:black">parametre</a>
+<a href = "./membre/parametre.php" style = "color:black">parametre</a>
 <div style = "display:flex; border:1px solid;  margin-bottom:2%;">
 
 
