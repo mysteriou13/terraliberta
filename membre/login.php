@@ -41,9 +41,9 @@ password<input type = "password" name = "pass">
 </center>
 <?php 
 
-$date = date("dmY");
+$date = date("dmy");
 
- $d = "SELECT date FROM membre  WHERE pseudo = 'mysteriou'";
+$d = "SELECT date FROM membre  WHERE pseudo = 'mysteriou'";
 
 $d2 = $mysqli->query($d);
 
@@ -105,6 +105,7 @@ echo "pseudo ou mot de pass incorrect";
 }
 
 }
+
 echo "</center>";
 
 if($valide == 1 && $abo == 1){
