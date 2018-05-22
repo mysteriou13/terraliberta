@@ -41,7 +41,7 @@ password<input type = "password" name = "pass">
 </center>
 <?php 
 
-$date = date("dmy");
+ $date = date("dmy");
 
 $d = "SELECT date FROM membre  WHERE pseudo = 'mysteriou'";
 
@@ -69,14 +69,14 @@ $i2  = $mysqli->query($i);
 $i3 = $i2->fetch_assoc();
 
 
-$d = "SELECT date FROM membre  WHERE pseudo = '$pseudo'";
+$d = "SELECT *  FROM  ebo  WHERE pseudo = '$pseudo'";
 
 $d2 = $mysqli->query($d);
 
 $d3 = $d2->fetch_assoc();
 
 
-if($date <= $d3['date']){
+if($date <= $d3['temps']){
 
 $abo = 1;
 
