@@ -1,5 +1,8 @@
 <?php 
 
+session_start();
+
+
 $f = "./installcons.php";
 
 include($f);
@@ -12,12 +15,6 @@ include($f);
   <link rel = "stylesheet" href = "style.css">
 
 <head>		
-
-<?php 
-session_start();
-
-	
-?>
 
 
 </head>
@@ -50,7 +47,7 @@ $display = "none";
 
 <?php
 
-if($display == "none"){
+if(!empty($_SESSION['pseudo'])){
 
 
 include("interface.php");

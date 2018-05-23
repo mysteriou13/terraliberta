@@ -15,7 +15,7 @@ $d2 = date("d");
 
 $d3 = 0;
 
-$d4 = date("Y");
+$d4 = date("y");
 
 $day = date("d");
 

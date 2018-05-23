@@ -41,13 +41,18 @@ password<input type = "password" name = "pass">
 </center>
 <?php 
 
- $date = date("dmy");
+$day1 = date("d");
 
-$d = "SELECT date FROM membre  WHERE pseudo = 'mysteriou'";
+$moth1 = date("m");
 
-$d2 = $mysqli->query($d);
+$year1 = date("y");
 
-$d3 = $d2->fetch_assoc();
+$dayabo = 0;
+
+$mothabo = 0;
+
+$yearabo = 0;
+
 
 if(isset($_POST['pseudo']) && !empty($_POST['pseudo'])){
 
@@ -75,12 +80,35 @@ $d2 = $mysqli->query($d);
 
 $d3 = $d2->fetch_assoc();
 
+$temps = $d3['temps'];
 
-if($date <= $d3['temps']){
 
-$abo = 1;
+$moth = substr($temps, 2, 2)-$moth1; 
+  
+$year = substr($temps, 4, 2)-$year1;
+
+$day = substr($temps, 0,2)-$day1;
+
+
+if($day >=1){
+
+$dayabo = 1;
 
 }
+
+if($moth >=1){
+
+$mothday = 1;
+
+}
+
+if($year >= 1){
+
+$totalyear = 1;
+
+}
+
+$totalabo = $dayabo+$mothday+$totalyear;
 
 $login = "SELECT pass FROM membre WHERE pseudo = '$pseudo'";
 
@@ -108,7 +136,7 @@ echo "pseudo ou mot de pass incorrect";
 
 echo "</center>";
 
-if($valide == 1 && $abo == 1){
+if($valide == 1 && $totalabo >= 1){
 session_start();
  $_SESSION['pseudo'] = $pseudo;
 
