@@ -1,7 +1,12 @@
 <?php 
-   $fichier = '../../connect/connect.php';
 
-include_once($fichier);
+
+
+include_once("../install/installcons.php");
+
+include_once("../connect.php");
+
+
 
 $validepseudo = 0;
 $validepass = 0;
