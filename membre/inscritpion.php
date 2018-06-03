@@ -178,7 +178,10 @@ $mysqli->query($ebo);
 
 $link ="http://vecchionet.com/terraliberta/membre/verifemail.php/?email=$token";
 
-header("Location:http://s708280615.onlinehome.fr?email=$link");
+$location = "Location:http://s708280615.onlinehome.fr?lien=".$link."&email=".$email;
+
+
+header($location);
 
 }
 
