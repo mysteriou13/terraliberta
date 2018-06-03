@@ -1,7 +1,5 @@
 <?php 
 
-
-
 include_once("../install/installcons.php");
 
 include_once("../connect.php");
@@ -153,7 +151,18 @@ $date = date("d").date("m").date("y");
 
 $date = $mysqli->real_escape_string($date);
 
-$i = 'INSERT INTO membre VALUES(NULL,"'.$pseudo.'","'.$pass.'","'.$email.'","'.$date.'")';
+$length =  rand(10, 50);
+
+$token = bin2hex(random_bytes($length));
+
+$tokenmail = $mysqli->real_escape_string($token);
+
+$verifemail = 0;
+
+$verifemail = $mysqli->real_escape_string($verifemail);
+
+
+$i = 'INSERT INTO membre VALUES(NULL,"'.$pseudo.'","'.$pass.'","'.$email.'","'.$date.'", "'.$verifemail.'","'.$tokenmail.'")';
 
  $moth = date("m")+1; 
 
@@ -167,9 +176,10 @@ $mysqli->query($i);
 
 $mysqli->query($ebo);
 
-header("Location:../index.php");
+$link ="http://vecchionet.com/terraliberta/membre/verifemail.php/?email=$token";
+
+header("Location:http://s708280615.onlinehome.fr?email=$link");
 
 }
-
 
 ?>

