@@ -28,4 +28,26 @@ $mysqli->query($update);
 
 }
 
+echo "email verifi&eacute; retour a l'index  dans 5 seconde";
+
+$a = 0;
+
+$a1 = 5;
+
+
+$location = "Location:../index.php";
+while($a <= $a1){
+
+$a++;
+
+
+}
+
+if($a == $a1){
+
+header($location);
+
+}
+
+
 ?>
