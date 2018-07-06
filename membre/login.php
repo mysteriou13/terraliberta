@@ -3,9 +3,6 @@
 
 include_once("../install/installcons.php");
 
-include_once("../connect.php");
-
-
 ?>
 
 <div style  = "position:absolute; top:20%; left:15%;">
