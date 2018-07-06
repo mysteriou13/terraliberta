@@ -22,34 +22,20 @@ mot de pass <input type = "password" name = "pass">
 
 $install ="installcons.php";
 
-if(file_exists($install)){
-
-
-}else{
-
-
-}
 
 $debut = "<?php ";
 
 if(!empty($_POST)){
-$server = " const server = '".$_POST['server']."'";
 
-$server = htmlspecialchars($_POST['server']);
+$postserver =  htmlspecialchars($_POST['server']);
 
-$data = "const server = '".$_POST['data'];
+$postdata =  htmlspecialchars($_POST['data']);
 
-$data = htmlspecialchars($_POST['data']);
+$postlogin = htmlspecialchars($_POST['login']);
 
-$login = "const login = '".$_POST['login']."'";
+$postpass =  htmlspecialchars($_POST['pass']);
 
-$login = htmlspecialchars($_POST['login']);  
-
-$pass = "const pass = '".$_POST['pass'];
-
-$pass = htmlspecialchars($_POST['pass']);  
-
-$mysqli = new mysqli($server,$login,$pass,$data);
+$mysqli = new mysqli($postserver, $postlogin,$postpass, $postdata);
 
 if($mysqli->connect_errno){
 
@@ -62,13 +48,13 @@ $debut  = "<?php\n";
 
 $fin = " ?>\n";
 
-$server = " const  server  = ".'"'.$server.'"'.";\n";
+$server = " const  server  = ".'"'.$postserver.'"'.";\n";
 
-$data = " const  data  = ".'"'.$data.'"'.";\n";
+$data = " const  data  = ".'"'.$postdata.'"'.";\n";
 
-$login = " const  login  = ".'"'.$login.'"'.";\n";
+$login = " const  login  = ".'"'.$postlogin.'"'.";\n";
 
-$pass  = " const  pass  = ".'"'.$pass.'"'.";\n";
+$pass  = " const  pass  = ".'"'.$postpass.'"'.";\n";
 
 $install ="installcons.php";
 
@@ -78,6 +64,10 @@ $fp = fopen('installcons.php', 'w+');
 
 fwrite($fp, $file);
 fclose($fp);
+
+if(!file_exists("installcons;php")){
+
+}
 
 $table = "CREATE TABLE `url` (`id` int(11) NOT NULL,`pseudo` text NOT NULL, `url` text NOT NULL,`name` text NOT NULL,`type` text NOT NULL) 
 ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -94,12 +84,16 @@ $mysqli->query($auto);
 
 $mysqli->query($auto1);
 
-header("Location: ../index.php");
 
 }
 
 }
 
+ if(!file_exists("installcons;php")){
+
+echo "erreur impossible d'ecrire dans le dossier";
+
+}
 
 ?>
 
