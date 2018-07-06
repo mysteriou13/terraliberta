@@ -2,10 +2,6 @@
 
 include_once("../install/installcons.php");
 
-include_once("../connect.php");
-
-
-
 $validepseudo = 0;
 $validepass = 0;
 $valideemail = 0;
