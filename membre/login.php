@@ -3,6 +3,10 @@
 
 include_once("../install/installcons.php");
 
+include_once("../connect.php");
+
+ ini_set('display_errors', 1);
+
 ?>
 
 <div style  = "position:absolute; top:20%; left:15%;">
@@ -50,6 +54,7 @@ $mothabo = 0;
 
 $yearabo = 0;
 
+$valide = 0;
 
 if(isset($_POST['pseudo']) && !empty($_POST['pseudo'])){
 
@@ -77,7 +82,7 @@ $d2 = $mysqli->query($d);
 
 $d3 = $d2->fetch_assoc();
 
-$temps = $d3['temps'];
+$temps = $d3['date'];
 
 
 $moth = substr($temps, 2, 2)-$moth1; 
@@ -112,6 +117,7 @@ $login = "SELECT pass FROM membre WHERE pseudo = '$pseudo'";
 $login1 = $mysqli->query($login);
 
 $login2 = $login1->fetch_assoc();
+
 
 echo "<center>";
 

@@ -1,11 +1,11 @@
 
 <?php
 
-session_start();
 
 if(!isset($_SESSION['pseudo'])){
 
 header("Location:index.php");
+
 
 }
 
@@ -13,23 +13,44 @@ include_once("./install/installcons.php");
 
 include_once("./connect.php");
 
-$url = "$_SERVER[REQUEST_URI]";
+ $url = "$_SERVER[REQUEST_URI]";
+
+ $nburl = substr_count($url,"?");
 
 $p = explode("?",$url);
 
-$p1 = $p[1];
+if($nburl == 1){
 
-$p2 = explode('&',$p[1]);
+$p1 = $p[1];
+ 
+}else{
+
+$p1 = "x";
+
+}
+
+$p2 = explode('&',$p1);
+
+$nburl1 = substr_count($url,"&"); 
 
 $p3 = count($p2);
 
 $p4 = $p3-1;
 
-$p5 = $p2[1];
+if($nburl1 >= 1){
+
+$p2a = $p2[1];
+
+}else{
+
+$p2a = "x";
+
+}
+$p5 = $p2a;
 
 $p6 = explode("=",$p5);
 
-$p7 = -1;
+$p7 = 0;
 
 $p8 = $p3-1;
 
@@ -39,9 +60,9 @@ $p5 = $p2[$p7];
 
 $p6 = explode("=",$p5);
 
-$id = $p6[0];
 
-$id1 =  $p6[$p7-1];
+$id = $p6[0];
+$id1 =  $p6[$p7];
 
 $titre = "pad".$id;
 
@@ -80,11 +101,9 @@ $b = 2;
      
 ?>
 
-
 <script src="PdcFenetre.js" language="javascript"> </script>
 
 <script>
-
  
    function test(){		
 		pdc = document.createElement("div");
@@ -127,9 +146,9 @@ echo $f;
 
 }
 
-var pad = "http://vecchionet.com:9001";
+var pad = "https://etherpad.vecchionet.com";
 
-var calc = "http://vecchionet.com:8000";
+var calc = "https://ethercalc.vecchionet.com";
 
 var url = pad;
 
@@ -182,6 +201,11 @@ créer un   fichier text colaboratif
 
 </br>
 
+<center>
+ <input type =  "submit" value = "cr&eacute;er un pad">
+</center>
+
+
 <?php 
 
 
@@ -190,7 +214,7 @@ if(isset($_POST['idpad']) && !empty($_POST['idpad'])){
 
 $pad = $_POST['idpad']; 
 
- $b = "SELECT COUNT(*)pseudo FROM url WHERE name= '$pad'";
+ $b = "SELECT COUNT(*)name FROM url WHERE name= '$pad'";
 
 $b1 = $mysqli->query($b);
 
@@ -199,10 +223,10 @@ $b2  = $b1->fetch_assoc();
 $b3 = $b2['name'];
 
 if($b3 == 0){
-echo "</br>";
+echo "</br>b3 </br>";
 
 
-$c =$_POST['idpad'].$_SESSION['pseudo'].$b3; 
+echo $c =$_POST['idpad'].$_SESSION['pseudo'].$b3; 
 
 echo "<script>";
 
@@ -222,11 +246,6 @@ echo $_POST['idpad']." exsite d&eacute;j&agrave;"."</br>";
 }
 
 ?>
-
-<center>
- <input type =  "submit" value = "cr&eacute;er un pad">
-</center>
-
 </form>
 
 </div>
@@ -255,7 +274,7 @@ if(isset($_POST['idcalc']) && !empty($_POST['idcalc'])){
 
 $pad = $_POST['idcalc'];
 
- $b = "SELECT COUNT(*)pseudo FROM url WHERE name= '$pad'";
+ $b = "SELECT COUNT(*)name FROM url WHERE name= '$pad'";
 
 $b1 = $mysqli->query($b);
 
@@ -295,8 +314,7 @@ echo $_POST['idcalc']." exsite d&eacute;j&agrave;"."</br>";
 </div>
 <?php 
 
-if(!empty($_GET)){
-
+ if(!empty($p9) ){
  while($p9 <= $p8-1){
 
 $p9++;
@@ -305,12 +323,19 @@ $p5 = $p2[$p9];
 
 $p6 = explode("=",$p5);
 
+ $nburl2 = substr_count($url,"=");
+
+if($nburl2 >= 1){
 $f2 = '"'.$p6[1].'"';
 
 $titre = $p6[0];
 
 $lien = $p6[1];
+}else{
 
+ $lien = "x";
+
+}
 $lien = $mysqli->real_escape_string($lien);
 
 $url = "SELECT COUNT(*)url FROM url WHERE pseudo= '$pseudo' AND url = '$lien'";
@@ -319,13 +344,23 @@ $url1  = $mysqli->query($url);
 
 $url2 = $url1->fetch_assoc();
 
+if($nburl2 >= 1){
+
 $c =$p6[1];
 
-$l = array('http://vecchionet.com:9001/p/','http://vecchionet.com:8000/');
+}else{
+
+$c = "x";
+
+}
+
+$l = array('https://etherpad.vecchionet.com/p/','https://ethercalc.vecchionet.com/');
 
 $l1 =  count($l);
 
-while($nbl <= $l1){
+$nbl = -1;
+
+while($nbl < $l1-1){
 
 $nbl++;
 
@@ -333,35 +368,44 @@ $l2 = $l[$nbl];
 
 $l3 = substr_count($lien,$l2);
 
+$l3."</br>";
 
-if($l3 == 1){
 
 $l4 = str_replace($l2,"",$lien);
 
 $l5 = str_replace($pseudo,"",$l4);
 
-$l6  = str_replace($b3['pseudo'],"",$l5);
+$l6  = str_replace($_SESSION['pseudo'],"",$l5);
 
-if($l2 == $l[0]){
+$l6  = str_replace(0,"",$l6);
 
-$type = "pad";
-
-}
-
-if($l2 == $l[1]){
-
-$type = "calc";
-
-}
-
-}
+$l6  = str_replace("https://etherpad.vecchionet.com/p/","",$l6);
 
 
 }
 
 if($url2['url'] == 0){
 
+$nblien = substr_count($lien, 'etherpad'); 
+
+$nblien1 = substr_count($lien, 'ethercalc');
+
+
+if($nblien == 1){
+
+$type = "pad";
+
+}
+
+
+if($nblien1 == 1){
+
+$type = "calc";
+
+}
+
 $type = $mysqli->real_escape_string($type);
+
 
 $i = 'INSERT INTO url VALUES(NULL, "'.$pseudo.'", "'.$lien.'", "'.$l6.'","'.$type.'")';
 
@@ -370,8 +414,8 @@ $mysqli->query($i);
 }
 
 }
-
-}?>
+}
+?>
 
 <div style = "display:flex;">
 

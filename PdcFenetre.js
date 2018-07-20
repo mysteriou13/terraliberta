@@ -23,7 +23,7 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,
         f8.innerHTML = "copier le lien dans le press papier";
         f9.innerHTML = url;
         f10.innerHTML = "partager";
-
+     
         if(length >=1){
          f3.src = url; 
 
@@ -82,11 +82,12 @@ function myFunction(i) {
 
 function changeclasse(a,b,c,d,e){
 
-var a1 = -1;
+var a1 = 0;
 
 while(a1 !=  a){
 
 a1++;
+
 
 if(a1 == b.id){
 

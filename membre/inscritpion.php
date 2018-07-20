@@ -2,6 +2,9 @@
 
 include_once("../install/installcons.php");
 
+ include_once("../connect.php");
+  ini_set('display_errors', 1);
+
 $validepseudo = 0;
 $validepass = 0;
 $valideemail = 0;
@@ -119,7 +122,7 @@ $erroremail  = 0;
 <?php 
 
 
-$fichier = '../../connect/connect.php';
+$fichier = '../connect.php';
 
 include_once($fichier);
 
