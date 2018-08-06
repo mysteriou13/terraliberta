@@ -2,41 +2,36 @@
 
 session_start();
 
-
- include_once("../install/installcons.php"); 
+ include_once("../install/installcons.php");
 
  include_once("../connect.php");
 
-$d1 = $_POST['item_number'];
+$header .= "POST /cgi-bin/webscr HTTP/1.0\r\n";
+$header .= "Host: ipnpb.paypal.com:443\r\n";
+$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
+$header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
+$fp = fsockopen ('ipnpb.paypal.com', 443, $errno, $errstr, 30);
 
-$d1 = htmlspecialchars($d1);
+$req = 'cmd=_notify-validate';
 
-$d2 = date("d");
-
-$d3 = 0;
-
-$d4 = date("y");
-
-$day = date("d");
-
-
-while($d3 <= $d1){
-
-$d3++;
-
-$d2 = $d2+1;
-
-if($d2 == 12){
-
-$d2 = 0;
-
-$d4 = $d4+1;
-
+ foreach ($_POST as $key => $value) {
+$value = trim(urlencode(stripslashes($value)));
+$req .= "&$key=$value";
 }
 
-}
+ if (isset($fp)){
+fputs ($fp, $header . $req);
+while (!feof($fp)) {
+$res = fgets ($fp, 1024);
+if (strcmp ($res, "VERIFIED") == 0) {
 
- $date1 =  $day.$d2.$d4;
+ $a = $_POST['item_number'];;
+
+ $a2 = "+".$a."month";
+
+ $date1 =  date(dmY, strtotime("$a2"));
+
+ $date1 = htmlspecialchars($date1);
 
  $date1 = $mysqli->real_escape_string($date1);
 
@@ -50,5 +45,8 @@ $d4 = $d4+1;
 
  $mysqli->query($u); 
 
+}
+}
+}
 
 ?>
