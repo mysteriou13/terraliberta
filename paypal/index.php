@@ -5,8 +5,11 @@ session_start();
 if(empty($_SESSION['pseudo'])){
 header("location:../index.php");
 
-}
+}else{
 
+$pseudo = $_SESSION['pseudo'];
+
+}
 ?>
 
 <script>

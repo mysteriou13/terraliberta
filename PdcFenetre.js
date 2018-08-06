@@ -184,11 +184,10 @@ document.location = chaine;
 
 function dc(c,b,q){
 
-
 if(b == 1){
 
 
-document.location = document.URL+"?"+c+"="+q; 
+document.location = document.URL+"?&"+c+"="+q; 
 
 }
 
@@ -199,6 +198,8 @@ c = c+1
  document.location = document.URL+"&"+c+"="+q;
 
 }
+
+
 
 }
 
