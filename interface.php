@@ -325,17 +325,18 @@ $p6 = explode("=",$p5);
 
  $nburl2 = substr_count($url,"=");
 
-if($nburl2 >= 1){
+
+
+if($nburl2 >= 1 && !empty($p6[1])){
 $f2 = '"'.$p6[1].'"';
 
 $titre = $p6[0];
 
 $lien = $p6[1];
-}else{
-
- $lien = "x";
-
 }
+
+if(!empty($lien)){
+
 $lien = $mysqli->real_escape_string($lien);
 
 $url = "SELECT COUNT(*)url FROM url WHERE pseudo= '$pseudo' AND url = '$lien'";
@@ -344,7 +345,9 @@ $url1  = $mysqli->query($url);
 
 $url2 = $url1->fetch_assoc();
 
-if($nburl2 >= 1){
+}
+
+if($nburl2 >= 1 && !empty($p6[1])){
 
 $c =$p6[1];
 
@@ -360,6 +363,7 @@ $l1 =  count($l);
 
 $nbl = -1;
 
+if(!empty($lien)){
 while($nbl < $l1-1){
 
 $nbl++;
@@ -383,8 +387,10 @@ $l6  = str_replace("https://etherpad.vecchionet.com/p/","",$l6);
 
 
 }
+}
 
-if($url2['url'] == 0){
+if(isset($url2)){
+if($url2['url'] == 0 ){
 
 $nblien = substr_count($lien, 'etherpad'); 
 
@@ -413,6 +419,7 @@ $mysqli->query($i);
 
 }
 
+}
 }
 }
 ?>
