@@ -1,19 +1,18 @@
 
 <?php 
 
-include_once("../install/installcons.php");
+include_once("./install/installcons.php");
 
-include_once("../connect.php");
+include_once("./connect.php");
 
- ini_set('display_errors', 1);
 
 ?>
 
-<div style  = "position:absolute; top:20%; left:15%;">
-
-<form action = "<?php $_SERVER['PHP_SELF']?>" method = "POST">
+<div style  = "position:absolute; top:20%; left:15%; background-color:DarkBlue; color:white; font-size:1.5em; border-radius:50px; margin-right:20%;">
 
 <center>
+<form action = "<?php $_SERVER['PHP_SELF']?>" method = "POST">
+
 
 <strong>
 
@@ -35,10 +34,11 @@ password<input type = "password" name = "pass">
 </br>
 <input type = "submit" value = "connection">
 </form>
+</center>
 
-
+<center>
 </br>
-<a style = "color:black" href = "inscritpion.php"> inscription </a>
+<a style = "color:white" href = "inscritpion.php"> inscription </a>
 </center>
 <?php 
 
@@ -144,7 +144,7 @@ session_start();
  $_SESSION['pseudo'] = $pseudo;
 
 
-header("Location:../index.php");
+header("Location:index.php");
 
 }
 ?>

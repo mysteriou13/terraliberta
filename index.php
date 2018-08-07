@@ -2,7 +2,8 @@
 
 session_start();
 
- ini_set('display_errors', 1); 
+ ini_set('display_errors', 1);
+
 
 $f = "./install/installcons.php";
 
@@ -35,6 +36,11 @@ if(!file_exists("./install/installcons.php")){
 
 header("Location:./install");
 
+}else{
+
+
+include("connect.php");
+
 }
 
 if(!isset($_SESSION['pseudo'])){
@@ -46,10 +52,14 @@ $display = "none";
 
 }
 
-?>
-<iframe  style = " border:0px solid; height:100%; width:100%; display:<?php echo $display;?>"src="./membre/login.php">
+if(!isset($_SESSION['pseudo'])){
 
-</iframe> 
+include("membre/login.php");
+
+}
+
+?>
+
 
 <?php
 
