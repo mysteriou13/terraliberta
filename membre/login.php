@@ -42,20 +42,7 @@ password<input type = "password" name = "pass">
 </center>
 <?php 
 
-$day1 = date("d");
-
-$moth1 = date("m");
-
-$year1 = date("y");
-
-$dayabo = 0;
-
-$mothabo = 0;
-
-$yearabo = 0;
-
 $valide = 0;
-
 if(isset($_POST['pseudo']) && !empty($_POST['pseudo'])){
 
 $pseudo = $mysqli->real_escape_string($_POST['pseudo']);
@@ -65,8 +52,6 @@ $pass = $mysqli->real_escape_string($_POST['pass']);
 $pass =  $_POST['pass'];
 
 $valide = 0;
-
-$abo = 0;
 
 
 $i = "SELECT COUNT(*)pseudo FROM membre WHERE pseudo = '$pseudo'";
@@ -84,33 +69,7 @@ $d3 = $d2->fetch_assoc();
 
 $temps = $d3['date'];
 
-
-$moth = substr($temps, 2, 2)-$moth1; 
-  
-$year = substr($temps, 4, 2)-$year1;
-
-$day = substr($temps, 0,2)-$day1;
-
-
-if($day >=1){
-
-$dayabo = 1;
-
-}
-
-if($moth >=1){
-
-$mothday = 1;
-
-}
-
-if($year >= 1){
-
-$totalyear = 1;
-
-}
-
-$totalabo = $dayabo+$mothday+$totalyear;
+ $date = date("dmy");
 
 $login = "SELECT pass FROM membre WHERE pseudo = '$pseudo'";
 
@@ -139,7 +98,7 @@ echo "pseudo ou mot de pass incorrect";
 
 echo "</center>";
 
-if($valide == 1 && $totalabo >= 1){
+if($valide == 1 && $temps <= $date){
 session_start();
  $_SESSION['pseudo'] = $pseudo;
 
