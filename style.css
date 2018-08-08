@@ -21,17 +21,18 @@ background-color:cyan;
 }
 .onglet a
 {
-        color:#000000;
         text-decoration:none;
 }
 .onglet_n
 {
-        background:#bbbbbb;
+       color:white;
+        background-color:blue;
         border-bottom:0px solid black;
 }
 .onglet_y
 {
-        background:#dddddd;
+        color:white;
+        background:DarkBlue;
         border-bottom:0px solid black;
         padding-bottom:4px;
 }
