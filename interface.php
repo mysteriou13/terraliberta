@@ -185,18 +185,27 @@ $select3 = $select2['name'];
 <a href = "deconnection.php" style = "color:black"> deconnection </a>
 </br>
 <a href = "./membre/parametre.php" style = "color:black">parametre</a>
-<div style = "display:flex; border:1px solid;  margin-bottom:2%;">
+<div style = "border-radius: 20px 20px; font-size:2em;">
 
 
-<div style = "border:1px solid;  margin-right:2%; ">
+<div style = "background-color:DarkBlue; border:5px solid white; border-radius:20px 20px;">
 	
 <form  action = "<?php $_SERVER['PHP_SELF'];?>" method = "post">
-<div>
+
+<div style = "color:white;">
+<center>
 créer un   fichier text colaboratif
+</center>
+
 </div>
 
-<div>
+<div style  = "color:white">
+<center>
+
  nom du fichier text  <input type = "text" name = "idpad">
+
+</center>
+
 </div>
 
 </br>
@@ -251,23 +260,29 @@ echo $_POST['idpad']." exsite d&eacute;j&agrave;"."</br>";
 </div>
 
 
-<div style = "border:1px solid;">
+<div style = "background-color:DarkBlue; border:5px solid white; border-radius:20px 20px;">
 
 <form action = "<?php $_SERVER['PHP_SELF']?>" method = "post">
 
-<div>
+<div style = "color:white;">
+<center>
 cr&eacute;er un tableur
+</center>
 </div>
 
-<div>
+<div style = "color:white;">
+<center>
  nom du tableur  <input type = "text" name = "idcalc">
 </div>
-
+</center>
 </br>
 
+<div>
 <center>
 <input type = "submit" value = "cr&eacute;er un tableur"> 
 </center>
+</div>
+
 <?php 
 
 if(isset($_POST['idcalc']) && !empty($_POST['idcalc'])){
