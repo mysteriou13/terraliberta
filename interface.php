@@ -185,14 +185,14 @@ $select3 = $select2['name'];
 <a href = "deconnection.php" style = "color:black"> deconnection </a>
 </br>
 <a href = "./membre/parametre.php" style = "color:black">parametre</a>
-<div style = "border-radius: 20px 20px; font-size:2em;">
+<div style = "margin-bottom:2%;  display:flex; flex-direction:column; justify-direction:space-around; border-radius: 20px 20px; font-size:2em;">
 
 
 <div style = "background-color:DarkBlue; border:5px solid white; border-radius:20px 20px;">
 	
 <form  action = "<?php $_SERVER['PHP_SELF'];?>" method = "post">
 
-<div style = "color:white;">
+<div style = "color:white; ">
 <center>
 créer un   fichier text colaboratif
 </center>
