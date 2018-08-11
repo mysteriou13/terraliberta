@@ -3,7 +3,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Un syst&egrave;me d'onglet en html</title>
+
     <link type="text/css" rel="stylesheet" media="all" title="CSS" href="style.css" />
+
      <script></script>
 </head>
 

@@ -1,6 +1,85 @@
 <div id = "menu" style = "margin-right:10%;">
 
-<div style = "border:1px solid black; background-color:DarkBlue; color:white; font-size:2em;">
+<div id = "d" style = "display:none">
+0
+</div>
+
+
+
+<script src = "onglet.js" language = "javascript" > </script>
+
+<script>
+
+function menu(pad,dis,id,c){
+
+var p = document.getElementById(pad);
+
+var d  = document.getElementById("d").innerHTML++;
+
+var discalc = null;
+
+
+if(id == "menupad"){
+
+ document.getElementById(pad).style.display = "block";
+
+ document.getElementById(c).style.display = "none";
+
+}
+
+
+
+if(id == "menucalc"){
+
+ document.getElementById(pad).style.display = "none";
+
+ document.getElementById(c).style.display = "block";
+
+}
+
+
+}
+
+
+</script>
+
+<?php
+
+$display = "none";
+
+?>
+
+<script>
+
+var dis = "<?php echo $display?>";
+
+</script>
+
+<div onload = "onglet()">
+       <div class="onglets_html">
+        <div id = "c" class="onglets">
+
+       <div id = "menupad" class = "onglet_n onglet" onclick = "menu('pad',dis,this.id,'calc')" >
+    liste des pad  
+      </div>
+ 
+       <div id = "menucalc" class = "onglet_n onglet" onclick = "menu('pad',dis,this.id,'calc') ">
+       liste des calc
+      </div>
+
+
+       </div>
+        <div id = "c1" class="contenu">
+
+
+      </div>
+
+
+ </div>
+
+<div>
+
+<div id = "pad" style = "display:<?php echo $display;?>; border:1px solid black; background-color:DarkBlue; color:white; font-size:2em;" >
 liste des fichier text
 
 <div>
@@ -47,7 +126,7 @@ echo $affiche3['name']; echo "</div>";
 </br>
 
 
-   <div style = "border:1px solid black">
+   <div style = "border:1px solid black; display:none" id= "calc">
 <div>
 liste des calc
 </div>
