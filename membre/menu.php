@@ -69,11 +69,7 @@ var dis = "<?php echo $display?>";
 
 
        </div>
-        <div id = "c1" class="contenu">
-
-
-      </div>
-
+       
 
  </div>
 
@@ -146,18 +142,18 @@ $urla = "$_SERVER[REQUEST_URI]";
 
    $a1 = $affiche3['url'];
 
-if($a == 0){
+  if($a == 0){
 
-echo "<div><button onclick = newurl(this.id) id =";echo $a1; echo ">";              
-echo $affiche3['name']; echo "</button></div>";                                     
+echo "<div onclick = newurl(this.id) id =";echo $a1; echo ">";
+echo $affiche3['name']; echo "</div>";
 
 }else{
 
-echo "<div><button  id =";echo $a1; echo ">";
-echo $affiche3['name']; echo "</button></div>";
+echo "<div  id =";echo $a1; echo ">";
+echo $affiche3['name']; echo "</div>";
 
 
-}                                                                                   
+}                                                                              
 
 }
                                                                                     
