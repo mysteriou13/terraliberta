@@ -126,7 +126,7 @@ echo $affiche3['name']; echo "</div>";
 </br>
 
 
-   <div style = "border:1px solid black; display:none" id= "calc">
+   <div style = "border:1px solid black; display:none; border:1px solid black; background-color:DarkBlue; color:white; font-size:2em;" id= "calc">
 <div>
 liste des calc
 </div>
