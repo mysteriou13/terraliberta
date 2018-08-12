@@ -445,17 +445,18 @@ $mysqli->query($i);
 <?php 
 include("./membre/menu.php");
 ?>
-</div>
+ </div>
 
 <div>
-<?php
-if(!empty($_GET)){
+<?php 
+
+ if(!empty($_GET)){
 include("onglet.php");
 
 }
+
 ?>
 </div>
 
 </div>
-
 </body>	

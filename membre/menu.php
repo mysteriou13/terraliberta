@@ -45,7 +45,7 @@ if(id == "menucalc"){
 
 <?php
 
-$display = "none";
+$display = "block";
 
 ?>
 
@@ -57,7 +57,7 @@ var dis = "<?php echo $display?>";
 
 <div onload = "onglet()">
        <div class="onglets_html">
-        <div id = "c" class="onglets">
+        <div >
 
        <div id = "menupad" class = "onglet_n onglet" onclick = "menu('pad',dis,this.id,'calc')" >
     liste des pad  
@@ -130,7 +130,7 @@ liste des calc
 
 $nb = 0;
 
-$affiche1 = "SELECT * FROM url WHERE  type = 'calc'";
+$affiche1 = "SELECT * FROM url WHERE  type = 'calc'  && pseudo = '$pseudo'";
 
 $affiche2 = $mysqli->query($affiche1);
 
@@ -162,4 +162,6 @@ echo $affiche3['name']; echo "</div>";
 </div>
 
  
+</div>
+</div>
 </div>
