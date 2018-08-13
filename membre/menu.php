@@ -32,7 +32,6 @@ if(id == "menupad"){
 }
 
 
-
 if(id == "menucalc"){
 
  document.getElementById(pad).style.display = "none";
@@ -66,7 +65,7 @@ var dis = "<?php echo $display?>";
        <div class="onglets_html">
         <div >
 
-       <div id = "menupad" style = "font-size:2em" class = "onglet_n onglet" onclick = "menu('pad',dis,this.id,'calc')" >
+       <div id = "menupad" style = "font-size:2em" class = "onglet_y onglet" onclick = "menu('pad',dis,this.id,'calc')" >
     liste des pad  
       </div>
  
@@ -97,7 +96,7 @@ $affiche2 = $mysqli->query($affiche1);
 
 $urla = "$_SERVER[REQUEST_URI]";
 
-  while($affiche3 = $affiche2->fetch_assoc()){
+while($affiche3 = $affiche2->fetch_assoc()){
 
     $a = substr_count($urla, $affiche3['url']);
 
