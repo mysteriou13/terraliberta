@@ -25,6 +25,8 @@ if(id == "menupad"){
 
  document.getElementById(c).style.display = "none";
 
+ document.getElementById("menucalc").className = "onglet_n onglet";  
+
 }
 
 
@@ -35,8 +37,9 @@ if(id == "menucalc"){
 
  document.getElementById(c).style.display = "block";
 
-}
+ document.getElementById("menupad").className = "onglet_n onglet";
 
+}
 
 }
 
@@ -82,7 +85,6 @@ var dis = "<?php echo $display?>";
 <?php
 
 $pseudo = $mysqli->real_escape_string($pseudo);
-
 $nb = 0;
 
 $affiche1 = "SELECT * FROM url WHERE  type = 'pad' && pseudo = '$pseudo'";
