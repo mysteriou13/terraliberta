@@ -59,11 +59,11 @@ var dis = "<?php echo $display?>";
        <div class="onglets_html">
         <div >
 
-       <div id = "menupad" class = "onglet_n onglet" onclick = "menu('pad',dis,this.id,'calc')" >
+       <div id = "menupad" style = "font-size:2em" class = "onglet_n onglet" onclick = "menu('pad',dis,this.id,'calc')" >
     liste des pad  
       </div>
  
-       <div id = "menucalc" class = "onglet_n onglet" onclick = "menu('pad',dis,this.id,'calc') ">
+       <div id = "menucalc" style = "font-size:2em;" class = "onglet_n onglet" onclick = "menu('pad',dis,this.id,'calc') ">
        liste des calc
       </div>
 
@@ -76,7 +76,6 @@ var dis = "<?php echo $display?>";
 <div>
 
 <div id = "pad" style = "display:<?php echo $display;?>; border:1px solid black; background-color:DarkBlue; color:white; font-size:2em;" >
-liste des fichier text
 
 <div>
 
@@ -118,8 +117,6 @@ echo $affiche3['name']; echo "</div>";
 </div>
   
 </div>
-
-</br>
 
 
    <div style = "border:1px solid black; display:none; border:1px solid black; background-color:DarkBlue; color:white; font-size:2em;" id= "calc">
