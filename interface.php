@@ -164,6 +164,27 @@ dc(c,c1,url);
 
 }
 
+ function affiche(){
+
+var r = document.getElementById("reduire");
+
+if(document.getElementById("parametre").style.display == "flex"){
+
+document.getElementById("parametre").style.display = "none";
+
+r.innerHTML = "-";
+
+}else{
+
+r.innerHTML = "+";
+  document.getElementById("parametre").style.display = "flex";
+}
+
+
+
+
+}
+
 </script>
 
 </head>
@@ -179,12 +200,50 @@ $select2 = $select1->fetch_assoc();
 $select3 = $select2['name'];
 
 ?>
+
    
 
-  
-<a href = "deconnection.php" style = "color:black"> deconnection </a>
+<div style = "color:white;  font-size:2em;">
+
+<div>
+
+<center onclick = "affiche()">
+<span style = "background-color:blue">
+menu
+</span>
+
+<span id = "reduire" style = "background-color:blue;  color:white;">
++
+
+</span>
+
+</center>
+
+</div>
+
+<div id = "parametre" style = "display:flex; background-color:blue; justify-content:space-around;">
+<div>
+<span style = "background-color:blue">
+<a href = "deconnection.php" style = "color:white"> deconnection </a>
+</span>
+</div>
+
+<div>
+<span style = "background-color:blue">
+<a href = "./membre/parametre.php" style = "color:white">parametre</a>
+</span>
+</div>
+
+<div>
+abonnement
+</div>
+
+</div>
+
+</div>
+
 </br>
-<a href = "./membre/parametre.php" style = "color:black">parametre</a>
+
 <div style = "margin-bottom:2%;  display:flex; flex-direction:column; justify-direction:space-around; border-radius: 20px 20px; font-size:2em;">
 
 
@@ -258,7 +317,6 @@ echo $_POST['idpad']." exsite d&eacute;j&agrave;"."</br>";
 </form>
 
 </div>
-
 
 <div style = "background-color:DarkBlue; border:5px solid white; border-radius:20px 20px;">
 
