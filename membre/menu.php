@@ -59,17 +59,47 @@ $display = "block";
 
 var dis = "<?php echo $display?>";
 
+function dismenu(id,l){
+
+var  m = document.getElementById(id);
+
+var  l = document.getElementById(l);
+
+if(m.style.display == "block"){
+
+m.style.display = "none";
+
+l.innerHTML = "-";
+
+}else{
+
+m.style.display= "block";
+
+l.innerHTML = "+";
+
+}
+
+}
+
 </script>
+
+  <button  id  = "bmenulistpad" onclick = "dismenu('listemenu','bmenulistpad')" style = "background-color:blue; color:white; font-size:2em; border-radius:20px; 20px">
++
+</button>
+
+
+
+ <div id = "listemenu" style = "display:block">
 
 <div onload = "onglet()">
        <div class="onglets_html">
         <div >
 
-       <div id = "menupad" style = "font-size:2em" class = "onglet_y onglet" onclick = "menu('pad',dis,this.id,'calc')" >
+       <div id = "menupad" style = "font-size:2em; border-radius:20px; 20px;" class = "onglet_y onglet" onclick = "menu('pad',dis,this.id,'calc')" >
     liste des pad  
       </div>
  
-       <div id = "menucalc" style = "font-size:2em;" class = "onglet_n onglet" onclick = "menu('pad',dis,this.id,'calc') ">
+       <div id = "menucalc" style = "font-size:2em; border-radius:20px; 20px;" class = "onglet_n onglet" onclick = "menu('pad',dis,this.id,'calc') ">
        liste des calc
       </div>
 
@@ -79,9 +109,8 @@ var dis = "<?php echo $display?>";
 
  </div>
 
-<div>
 
-<div id = "pad" style = "display:<?php echo $display;?>; border:1px solid black; background-color:DarkBlue; color:white; font-size:2em;" >
+<div id = "pad" style = "display:<?php echo $display;?>; border-radius:20px; 20px; background-color:DarkBlue; color:white; font-size:2em;" >
 
 <div>
 
@@ -124,10 +153,7 @@ echo $affiche3['name']; echo "</div>";
 </div>
 
 
-   <div style = "border:1px solid black; display:none; border:1px solid black; background-color:DarkBlue; color:white; font-size:2em;" id= "calc">
-<div>
-liste des calc
-</div>
+   <div style = "border-radius:20px; 20px; display:none;  background-color:DarkBlue; color:white; font-size:2em;" id= "calc">
 <?php
 
 $nb = 0;
@@ -163,7 +189,7 @@ echo $affiche3['name']; echo "</div>";
 
 </div>
 
- 
+
 </div>
 </div>
 </div>
