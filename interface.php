@@ -227,25 +227,26 @@ $select3 = $select2['name'];
 
    
 
-<div style = "color:white;  font-size:2em;">
+<div style = "color:white; ">
 
 <div>
 
-<center onclick = "affiche()">
-<span style = "background-color:blue">
-menu
-</span>
+<center>
 
-<span id = "reduire" style = "background-color:blue;  color:white;">
+<span style = "background-color:blue; border-radius:20px; 20px; font-size:2em;">
+parametre
+
+<button   onclick = "affiche()"  id = "reduire" style =" background-color:blue; border-radius:20px; 20px; color:white;font-size:1em; margin:1.5%;">
 +
 
+</button>
 </span>
 
 </center>
 
 </div>
 
-<div id = "parametre" style = "display:flex; background-color:blue; justify-content:space-around;">
+<div id = "parametre" style = "display:flex;  background-color:blue; border-radius:20px; 20px; font-size:2em;  justify-content:space-around;">
 <div>
 <span style = "background-color:blue">
 <a href = "deconnection.php" style = "color:white"> deconnection </a>
