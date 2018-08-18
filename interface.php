@@ -185,6 +185,30 @@ r.innerHTML = "+";
 
 }
 
+function Dis(id){
+
+var div = document.getElementById(id);
+
+var b = document.getElementById("bfile");
+
+if(div.style.display == "flex"){
+
+div.style.display = "none";
+
+b.innerHTML = "-";
+
+}else{
+
+b.innerHTML = "+";
+
+div.style.display = "flex";
+
+
+}
+
+
+}
+
 </script>
 
 </head>
@@ -244,10 +268,16 @@ abonnement
 
 </br>
 
-<div style = "margin-bottom:2%;  display:flex; flex-direction:column; justify-direction:space-around; border-radius: 20px 20px; font-size:2em;">
+<div style = "background-color:blue; border-radius:20px; 20px;  padding-bottom:1em; margin-bottom:2em;">
+
+<button id ="bfile" style = "background-color:blue; margin:1%;  border-radius:20px; 20px;  color:white; font-size:2em;" onclick = "Dis('file')">
++
+</button>
+
+<div id = "file" style = "margin-bottom:2%;  display:flex; flex-direction:column; justify-direction:space-around; border-radius: 20px 20px; font-size:2em;">
 
 
-<div style = "background-color:DarkBlue; border:5px solid white; border-radius:20px 20px;">
+<div style = "background-color:DarkBlue; border-radius:20px; 20px; border:5px solid white; border-radius:20px 20px;">
 	
 <form  action = "<?php $_SERVER['PHP_SELF'];?>" method = "post">
 
@@ -339,6 +369,8 @@ cr&eacute;er un tableur
 <center>
 <input type = "submit" value = "cr&eacute;er un tableur"> 
 </center>
+</div>
+
 </div>
 
 <?php 
