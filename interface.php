@@ -223,52 +223,10 @@ $select2 = $select1->fetch_assoc();
 
 $select3 = $select2['name'];
 
+
 ?>
 
-   
-
-<div style = "color:white; ">
-
-<div>
-
-<center>
-
-<span style = "background-color:blue; border-radius:20px; 20px; font-size:2em;">
-parametre
-
-<button   onclick = "affiche()"  id = "reduire" style =" background-color:blue; border-radius:20px; 20px; color:white;font-size:1em; margin:1.5%;">
-+
-
-</button>
-</span>
-
-</center>
-
-</div>
-
-<div id = "parametre" style = "display:flex;  background-color:blue; border-radius:20px; 20px; font-size:2em;  justify-content:space-around;">
-<div>
-<span style = "background-color:blue">
-<a href = "deconnection.php" style = "color:white"> deconnection </a>
-</span>
-</div>
-
-<div>
-<span style = "background-color:blue">
-<a href = "./membre/parametre.php" style = "color:white">parametre</a>
-</span>
-</div>
-
-<div>
-abonnement
-</div>
-
-</div>
-
-</div>
-
-</br>
-
+  
 <div style = "background-color:blue; border-radius:20px; 20px;  padding-bottom:1em; margin-bottom:2em;">
 
 <button id ="bfile" style = "background-color:blue; margin:1%;  border-radius:20px; 20px;  color:white; font-size:2em;" onclick = "Dis('file')">

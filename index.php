@@ -11,24 +11,12 @@ $d = "ff";
 ?>
 <html>
 
-
-
-
-<title> terraliberta </title>		
-
-  <link rel = "stylesheet" href = "style.css">
-
-<head>		
-
-
-</head>
-	
 <body onload = "test()">
 
-<script>
+<?php
 
-</script>
-<?php 
+include("head.php");
+
 if(!file_exists("./install/installcons.php")){
 
 header("Location:./install");
@@ -62,6 +50,7 @@ include("membre/login.php");
 
 if(!empty($_SESSION['pseudo'])){
 
+include("header.php");
 
 include("interface.php");
 
