@@ -212,7 +212,7 @@ div.style.display = "flex";
 </script>
 
 </head>
- <body onload = "test()">
+
 <?php
 
 $select = "SELECT * FROM url WHERE pseudo = '$pseudo'";
@@ -510,4 +510,3 @@ include("onglet.php");
 </div>
 
 </div>
-</body>	
