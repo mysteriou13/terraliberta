@@ -227,20 +227,21 @@ $select3 = $select2['name'];
 ?>
 
   
-<div style = "background-color:blue; border-radius:20px; 20px;  padding-bottom:1em; margin-bottom:2em;">
+<div style = " border-radius:20px; 20px;">
 
-<button id ="bfile" style = "background-color:blue; margin:1%;  border-radius:20px; 20px;  color:white; font-size:2em;" onclick = "Dis('file')">
-+
-</button>
 
 <div id = "file" style = "margin-bottom:2%;  display:flex; flex-direction:column; justify-direction:space-around; border-radius: 20px 20px; font-size:2em;">
 
+<div style  = "display:flex; justify-content:space-between ">
 
-<div style = "background-color:DarkBlue; border-radius:20px; 20px; border:5px solid white; border-radius:20px 20px;">
+<div>
+
+<div style = "background-color:DarkBlue;  border-radius:20px; 20px; border:5px solid white; border-radius:20px 20px;">
 	
 <form  action = "<?php $_SERVER['PHP_SELF'];?>" method = "post">
 
 <div style = "color:white; ">
+
 <center>
 créer un   fichier text colaboratif
 </center>
@@ -256,12 +257,9 @@ créer un   fichier text colaboratif
 
 </div>
 
-</br>
-
 <center>
  <input type =  "submit" value = "cr&eacute;er un pad">
 </center>
-
 
 <?php 
 
@@ -307,6 +305,9 @@ echo $_POST['idpad']." exsite d&eacute;j&agrave;"."</br>";
 
 </div>
 
+</div>
+
+<div>
 <div style = "background-color:DarkBlue; border:5px solid white; border-radius:20px 20px;">
 
 <form action = "<?php $_SERVER['PHP_SELF']?>" method = "post">
@@ -322,7 +323,6 @@ cr&eacute;er un tableur
  nom du tableur  <input type = "text" name = "idcalc">
 </div>
 </center>
-</br>
 
 <div>
 <center>
@@ -330,6 +330,7 @@ cr&eacute;er un tableur
 </center>
 </div>
 
+</div>
 </div>
 
 <?php 
@@ -374,6 +375,7 @@ echo $_POST['idcalc']." exsite d&eacute;j&agrave;"."</br>";
 
 </form>
 
+</div>
 </div>
 </div>
 <?php 

@@ -83,9 +83,6 @@ l.innerHTML = "+";
 
 </script>
 
-  <button  id  = "bmenulistpad" onclick = "dismenu('listemenu','bmenulistpad')" style = "background-color:blue; color:white; font-size:2em; border-radius:20px; 20px">
-+
-</button>
 
 
 

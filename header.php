@@ -4,10 +4,6 @@
 <div style = "display:flex; ">
 <div style = "background-color:blue; margin-left:2%; ">
 
-<button   onclick = "affiche()"  id = "reduire" style =" background-color:blue; border-radius:20px; 20px; color:white;font-size:2em; margin:1.5%;">
-+
-
-</button>
 </div>
 
 </div>
