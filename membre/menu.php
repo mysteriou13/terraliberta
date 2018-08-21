@@ -69,13 +69,11 @@ if(m.style.display == "block"){
 
 m.style.display = "none";
 
-l.innerHTML = "-";
 
 }else{
 
 m.style.display= "block";
 
-l.innerHTML = "+";
 
 }
 
@@ -86,7 +84,15 @@ l.innerHTML = "+";
 
 
 
- <div id = "listemenu" style = "display:block">
+<div style = "background-color:blue; border-radius:20px; 20px; ">
+
+<button id = "blistemenu" style = "background-color:blue; margin:2%; color:white; font-size:2em;   border-radius:20px; 20px;" onclick = "dismenu('listemenu','blistmenu')">
+
++
+
+</button>
+
+ <div id = "listemenu" style = " display:block; background-color:blue; border:1px solid blue; border-radius:20px; 20px; display:block">
 
 <div onload = "onglet()">
        <div class="onglets_html">
@@ -185,7 +191,7 @@ echo $affiche3['name']; echo "</div>";
 ?>                                                                                  
 
 </div>
-
+</div>
 
 </div>
 </div>

@@ -25,7 +25,9 @@
 </div>
 
 <div>
-abonnement
+
+<a href = "./paypal/" style = "color:white;">abonnement</a>
+
 </div>
 
 
