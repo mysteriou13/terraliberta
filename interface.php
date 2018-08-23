@@ -295,7 +295,7 @@ echo "</script>";
 
 }else{
 
-echo $_POST['idpad']." exsite d&eacute;j&agrave;"."</br>";
+echo "<span style = 'color:white'>".$_POST['idpad']." exsite d&eacute;j&agrave;"."</span></br>";
 
 }
 }
