@@ -328,8 +328,6 @@ cr&eacute;er un tableur
 </center>
 </div>
 
-</div>
-</div>
 
 <?php 
 
@@ -344,9 +342,6 @@ $b1 = $mysqli->query($b);
 $b2  = $b1->fetch_assoc();
 
 $b3 = $b2['name'];
-
-
-echo "</br>";
 
 if($b3 == 0){
 $c =$_POST['idcalc'].$_SESSION['pseudo'].$b3;
@@ -363,14 +358,15 @@ echo "</script>";
 
 }else{
 
-echo $_POST['idcalc']." exsite d&eacute;j&agrave;"."</br>";
+echo "<span style = 'color:white'>".$_POST['idcalc']." exsite d&eacute;j&agrave;"."</span> </br>";
 
 }
 }
 
 ?>
 
-
+</div>
+</div>
 </form>
 
 </div>
