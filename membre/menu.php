@@ -69,11 +69,13 @@ if(m.style.display == "block"){
 
 m.style.display = "none";
 
+l.innerHTML = "+";
 
 }else{
 
 m.style.display= "block";
 
+l.innerHTML = "-";
 
 }
 
@@ -86,9 +88,9 @@ m.style.display= "block";
 
 <div style = "background-color:blue; border-radius:20px; 20px; ">
 
-<button id = "blistemenu" style = "background-color:blue; margin:2%; color:white; font-size:2em;   border-radius:20px; 20px;" onclick = "dismenu('listemenu','blistmenu')">
+<button id = "blistemenu" style = "background-color:blue; margin:2%; color:white; font-size:2em;   border-radius:20px; 20px;" onclick = "dismenu('listemenu','blistemenu')">
 
-+
+-
 
 </button>
 
