@@ -313,9 +313,7 @@ echo "<span style = 'color:white'>".$_POST['idpad']." exsite d&eacute;j&agrave;"
 <form action = "<?php $_SERVER['PHP_SELF']?>" method = "post">
 
 <div style = "color:white;">
-<center>
 cr&eacute;er un tableur
-</center>
 </div>
 
 <div style = "color:white;">
