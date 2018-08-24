@@ -1,5 +1,10 @@
 <header>
-<div style = "color:white;   font-size:1em; padding-bottom:2em;">
+
+<button id ="bmenu"  style = "display:block; background-color:blue; font-size:2em; color:white; border-radius:20px; 20px;" onclick = "dismenu('menuheader','bmenu')">
+-
+</button>
+
+<div  id  = "menuheader" style = "color:white;   font-size:1em; padding-bottom:2em;">
 
 <div style = "display:flex; ">
 <div style = "background-color:blue; margin-left:2%; ">
