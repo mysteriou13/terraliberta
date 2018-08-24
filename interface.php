@@ -185,29 +185,7 @@ r.innerHTML = "+";
 
 }
 
-function Dis(id){
 
-var div = document.getElementById(id);
-
-var b = document.getElementById("bfile");
-
-if(div.style.display == "flex"){
-
-div.style.display = "none";
-
-b.innerHTML = "-";
-
-}else{
-
-b.innerHTML = "+";
-
-div.style.display = "flex";
-
-
-}
-
-
-}
 
 </script>
 
@@ -226,9 +204,13 @@ $select3 = $select2['name'];
 
 ?>
 
-  
-<div style = " border-radius:20px; 20px;">
 
+<button id ="bparametre"  style = "display:block; background-color:blue; font-size:2em; color:white; border-radius:20px; 20px;" onclick = "dismenu('menuparametre','bparametre')">
+-
+</button>
+
+  
+<div id = "menuparametre"; style = "display:block; border-radius:20px; 20px; background-color:blue; padding:1%; margin:1%;">
 
 <div id = "file" style = "margin-bottom:2%;  display:flex; flex-direction:column; justify-direction:space-around; border-radius: 20px 20px; font-size:2em;">
 
@@ -327,7 +309,7 @@ cr&eacute;er un tableur
 <input type = "submit" value = "cr&eacute;er un tableur"> 
 </center>
 </div>
-
+</div>
 
 <?php 
 
@@ -368,10 +350,9 @@ echo "<span style = 'color:white'>".$_POST['idcalc']." exsite d&eacute;j&agrave;
 </div>
 </div>
 </form>
+</div>
+</div>
 
-</div>
-</div>
-</div>
 <?php 
 
  if(!empty($p9) ){

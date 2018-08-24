@@ -86,7 +86,7 @@ l.innerHTML = "-";
 
 
 
-<div style = "background-color:blue; border-radius:20px; 20px; ">
+<div style = "background-color:blue border-radius:20px; 20px; ">
 
 <button id = "blistemenu" style = "background-color:blue; margin:2%; color:white; font-size:2em;   border-radius:20px; 20px;" onclick = "dismenu('listemenu','blistemenu')">
 
