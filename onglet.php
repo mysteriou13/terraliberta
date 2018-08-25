@@ -9,7 +9,7 @@
      <script></script>
 </head>
 
-<script src = "onglet.js" language = "javascript" > </script>
+<script src = "./js/onglet.js" language = "javascript" > </script>
 
 
 <div onload = "onglet()">
