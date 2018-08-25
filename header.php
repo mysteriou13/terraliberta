@@ -4,16 +4,7 @@
 -
 </button>
 
-<div  id  = "menuheader" style = "color:white;   font-size:1em; padding-bottom:2em;">
-
-<div style = "display:flex; ">
-<div style = "background-color:blue; margin-left:2%; ">
-
-</div>
-
-</div>
-
-<div>
+<div  id  = "menuheader" style = "color:white; background-color:red;  font-size:1em; padding-bottom:2em;">
 
 <div id = "parametre" style = "display:flex;  background-color:blue; border-radius:20px; 20px; font-size:2em;  justify-content:space-around;">
 
@@ -35,10 +26,10 @@
 
 </div>
 
-
 </div>
 
 </div>
+
 
 
 
