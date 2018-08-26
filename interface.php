@@ -1,4 +1,3 @@
-
 <?php
 
 
@@ -6,8 +5,8 @@ if(!isset($_SESSION['pseudo'])){
 
 header("Location:index.php");
 
-
 }
+
 
 include_once("./install/installcons.php");
 
@@ -101,50 +100,12 @@ $b = 2;
      
 ?>
 
-<script src="PdcFenetre.js" language="javascript"> </script>
 
-<script>
- 
-   function test(){		
-		pdc = document.createElement("div");
-<?php               
-
- if($pos !== false){
-
-
-$f3 = ",";
-
-while($p7 <= $p8-1){
-
-$p7++;
-
-$p5 = $p2[$p7];
-
-$p6 = explode("=",$p5);
-
-$f2 = '"'.$p6[1].'"';
-
-$titre = $p6[0];
-
-$titre2 = $p6[1];
-
-$select = "SELECT * FROM url  WHERE url = '$titre2'";
-$select1 = $mysqli->query($select);
-
-$select2 = $select1->fetch_assoc();
-
-$select3 = $select2['name'];
-
-$f = 'CreerPdcFenetre( "'.$titre.'"'.', 500, 250, 200, 150, pdc,'.$f2.$f3.$p7.','.$p8.",'$select3');";
-echo $f;
-
-}
-
-}
-
+<?php 
+include("test.php");
+include("./js/newurl.php");
 ?>
-
-}
+<script>
 
 var pad = "https://etherpad.vecchionet.com";
 
@@ -152,44 +113,8 @@ var calc = "https://ethercalc.vecchionet.com";
 
 var url = pad;
 
-function  newurl(url){
-
-var c = 0;
-
-c = <?php echo $p3-1;?>;
-
-var c1 = <?php echo $b;?>
-
-dc(c,c1,url);
-
-}
-
- function affiche(){
-
-var r = document.getElementById("reduire");
-
-if(document.getElementById("parametre").style.display == "flex"){
-
-document.getElementById("parametre").style.display = "none";
-
-r.innerHTML = "-";
-
-}else{
-
-r.innerHTML = "+";
-  document.getElementById("parametre").style.display = "flex";
-}
-
-
-
-
-}
-
-
-
 </script>
 
-</head>
 
 <?php
 
@@ -354,6 +279,7 @@ echo "<span style = 'color:white'>".$_POST['idcalc']." exsite d&eacute;j&agrave;
 </div>
 
 <?php 
+
 
  if(!empty($p9) ){
  while($p9 <= $p8-1){

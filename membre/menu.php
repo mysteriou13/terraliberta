@@ -1,3 +1,5 @@
+
+
 <div id = "menu" style = "margin-right:10%;">
 
 <div id = "d" style = "display:none">
@@ -6,7 +8,6 @@
 
 
 
-<script src = "onglet.js" language = "javascript" > </script>
 
 <script>
 

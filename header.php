@@ -1,6 +1,6 @@
 <header>
 
-<button id ="bmenu"  style = "display:block; background-color:blue; font-size:2em; color:white; border-radius:20px; 20px;" onclick = "dismenu('menuheader','bmenu')">
+<button id ="bmenua"  style = "display:block; background-color:blue; font-size:2em; color:white; border-radius:20px; 20px;" onclick = "dismenu('menuheader','bmenua')">
 -
 </button>
 
@@ -29,8 +29,5 @@
 </div>
 
 </div>
-
-
-
 
 </header>
