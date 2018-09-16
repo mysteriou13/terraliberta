@@ -69,7 +69,7 @@ $d3 = $d2->fetch_assoc();
 
 $temps = $d3['date'];
 
- $date = date("dmy");
+$date = date("dmy");
 
 $login = "SELECT pass FROM membre WHERE pseudo = '$pseudo'";
 
@@ -98,7 +98,7 @@ echo "pseudo ou mot de pass incorrect";
 
 echo "</center>";
 
-if($valide == 1 && $temps <= $date){
+if($valide == 1 && $temps >= $date){
 session_start();
  $_SESSION['pseudo'] = $pseudo;
 

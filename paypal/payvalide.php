@@ -2,9 +2,9 @@
 
 session_start();
 
- include_once("../install/installcons.php");
+include_once("../install/installcons.php");
 
- include_once("../connect.php");
+include_once("../connect.php");
 
 $header .= "POST /cgi-bin/webscr HTTP/1.0\r\n";
 $header .= "Host: ipnpb.paypal.com:443\r\n";
@@ -25,7 +25,7 @@ while (!feof($fp)) {
 $res = fgets ($fp, 1024);
 if (strcmp ($res, "VERIFIED") == 0) {
 
- $a = $_POST['item_number'];;
+ $a = $_POST['item_number'];
 
  $a2 = "+".$a."month";
 
