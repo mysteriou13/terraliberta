@@ -1,3 +1,6 @@
+<html>
+<body>
+
 <?php 
 
 session_start();
@@ -129,3 +132,5 @@ if(isset($_GET['abo'])){
 </div>
 </center>
 
+</body>
+</html>
