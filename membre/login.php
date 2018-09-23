@@ -42,6 +42,12 @@ password<input type = "password" name = "pass">
 </center>
 <?php 
 
+ $day = substr(date("dmy"), 0, 2); 
+
+ $moth = substr(date("dmy"), 2, 2);
+
+ $year = substr(date("dmy"), 4, 2);
+
 $valide = 0;
 if(isset($_POST['pseudo']) && !empty($_POST['pseudo'])){
 
@@ -98,7 +104,7 @@ echo "pseudo ou mot de pass incorrect";
 
 echo "</center>";
 
-if($valide == 1 && $temps >= $date){
+if($valide == 1 && $day <= date("d") && $moth <= date("m") && date("y")<= $year ){
 session_start();
  $_SESSION['pseudo'] = $pseudo;
 
