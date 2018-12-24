@@ -150,18 +150,27 @@ $select3 = $select2['name'];
 <div style = "color:white; ">
 
 <center>
-créer un   fichier text colaboratif
+nouveau pad
 </center>
 
 </div>
 
 <div style  = "color:white">
-<center>
 
- nom du fichier text  <input type = "text" name = "idpad">
-
-</center>
-
+ nom du pad  <input type = "text" name = "idpad">
+</br>
+durée de vie du pad:
+</br>
+<input type = "radio" name = "pad" value = "7days">
+7 jours
+<input type = "radio" name = "pad" value = "1month">
+1 mois
+<input type = "radio" name = "pad" value = "3month">
+3 mois
+<input type = "radio" name = "pad" value = "6month">
+6 mois
+<input type = "radio" name = "pad" value  = "1year">
+1 ans
 </div>
 
 <center>
@@ -171,12 +180,68 @@ créer un   fichier text colaboratif
 <?php 
 
 
-
-if(isset($_POST['idpad']) && !empty($_POST['idpad'])){
+if(isset($_POST['pad']) && !empty($_POST['pad'])){
 
 $pad = $_POST['idpad']; 
 
- $b = "SELECT COUNT(*)name FROM url WHERE name= '$pad'";
+$pad = $mysqli->real_escape_string($pad);
+
+$b = "SELECT COUNT(*)name FROM url WHERE name= '$pad'";
+
+$b1 = $mysqli->query($b);
+
+$b2  = $b1->fetch_assoc();
+
+$b3 = $b2['name'];
+
+$date = date("dmy", strtotime($_POST['pad']));
+
+$c = $_POST['idpad'].$_SESSION['pseudo'].$b3; 
+
+$c = $mysqli->real_escape_string($c);
+
+$calc  = 'INSERT INTO calc VALUES(NULL, "'.$date.'", "'.$c.'")';
+
+$mysqli->query($calc);
+
+}
+
+if(isset($_POST['calc']) && !empty($_POST['calc'])){
+
+$pad = $_POST['idcalc']; 
+
+$pad = $mysqli->real_escape_string($pad);
+
+$b = "SELECT COUNT(*)name FROM url WHERE name= '$pad'";
+
+$b1 = $mysqli->query($b);
+
+$b2  = $b1->fetch_assoc();
+
+$b3 = $b2['name'];
+
+$date = date("dmy", strtotime($_POST['calc']));
+
+$c = $_POST['idcalc'].$_SESSION['pseudo'].$b3; 
+
+$c = $mysqli->real_escape_string($c);
+
+$calc  = 'INSERT INTO calc VALUES(NULL, "'.$date.'", "'.$c.'")';
+
+$mysqli->query($calc);
+
+}
+if(isset($_POST['idpad']) && !empty($_POST['idpad']) && isset($_POST['pad']) && !empty($_POST['pad'])){
+
+$pad = $_POST['idpad']; 
+
+$pad = $mysqli->real_escape_string($pad);
+
+$date = date("dmy", strtotime($_POST['pad']));
+
+$date = $mysqli->real_escape_string($date);
+
+$b = "SELECT COUNT(*)name FROM url WHERE name= '$pad'";
 
 $b1 = $mysqli->query($b);
 
@@ -185,10 +250,10 @@ $b2  = $b1->fetch_assoc();
 $b3 = $b2['name'];
 
 if($b3 == 0){
-echo "</br>b3 </br>";
 
+$c =$_POST['idpad'].$_SESSION['pseudo'].$b3; 
 
-echo $c =$_POST['idpad'].$_SESSION['pseudo'].$b3; 
+$c = $mysqli->real_escape_string($c);
 
 echo "<script>";
 
@@ -205,10 +270,11 @@ echo "</script>";
 echo "<span style = 'color:white'>".$_POST['idpad']." exsite d&eacute;j&agrave;"."</span></br>";
 
 }
+
+
 }
 
 ?>
-</form>
 
 </div>
 
@@ -224,25 +290,40 @@ cr&eacute;er un tableur
 </div>
 
 <div style = "color:white;">
-<center>
  nom du tableur  <input type = "text" name = "idcalc">
+</br>
+durée de vie du  tableur
+</br>
+<input type = "radio" name = "calc" value = "7days">
+7 jours
+<input type = "radio" name = "calc" value = "1month">
+1 mois
+<input type = "radio" name = "calc" value = "3month">
+3 mois
+<input type = "radio" name = "calc" value = "6month">
+6 mois
+<input type = "radio" name = "calc" value  = "1year">
+1 ans
+
 </div>
-</center>
 
 <div>
+
 <center>
 <input type = "submit" value = "cr&eacute;er un tableur"> 
 </center>
+
 </div>
+
 </div>
 
 <?php 
 
-if(isset($_POST['idcalc']) && !empty($_POST['idcalc'])){
+if( isset($_POST['idcalc']) && !empty($_POST['idcalc']) &&  isset($_POST['calc']) && !empty($_POST['calc'])){
 
 $pad = $_POST['idcalc'];
 
- $b = "SELECT COUNT(*)name FROM url WHERE name= '$pad'";
+$b = "SELECT COUNT(*)name FROM url WHERE name= '$pad'";
 
 $b1 = $mysqli->query($b);
 
@@ -250,7 +331,10 @@ $b2  = $b1->fetch_assoc();
 
 $b3 = $b2['name'];
 
+$date = strtotime("dmy",$_POST['calc']);
+
 if($b3 == 0){
+
 $c =$_POST['idcalc'].$_SESSION['pseudo'].$b3;
 
 echo "<script>";
@@ -290,7 +374,7 @@ $p5 = $p2[$p9];
 
 $p6 = explode("=",$p5);
 
- $nburl2 = substr_count($url,"=");
+$nburl2 = substr_count($url,"=");
 
 
 
@@ -379,7 +463,6 @@ $type = "calc";
 
 $type = $mysqli->real_escape_string($type);
 
-
 $i = 'INSERT INTO url VALUES(NULL, "'.$pseudo.'", "'.$lien.'", "'.$l6.'","'.$type.'")';
 
 $mysqli->query($i);
@@ -389,6 +472,7 @@ $mysqli->query($i);
 }
 }
 }
+
 ?>
 
 <div style = "display:flex;">

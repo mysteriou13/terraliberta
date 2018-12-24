@@ -8,7 +8,7 @@ include_once("./connect.php");
 
 ?>
 
-<div style  = "position:absolute; top:20%; left:15%; background-color:DarkBlue; color:white; font-size:1.5em; border-radius:50px; margin-right:20%;">
+<div style  = "position:absolute;  left:15%; background-color:DarkBlue; color:white; font-size:1.5em; border-radius:50px; margin-right:20%;">
 
 <center>
 <form action = "<?php $_SERVER['PHP_SELF']?>" method = "POST">
