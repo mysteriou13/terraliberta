@@ -40,6 +40,16 @@ $display = "none";
 
 }
 
+?>
+
+<div id = "b" style = "display:<?php echo $display;?>;font-size:2em; margin-top:1%; ">
+<center id = "premium">
+service r&eacute;serv&eacute; au utlisateur premium
+</center>
+</div>
+
+
+<?php
 if(!isset($_SESSION['pseudo'])){
 
 include("membre/login.php");
@@ -47,6 +57,7 @@ include("membre/login.php");
 }
 
 ?>
+
 
 
 <?php
