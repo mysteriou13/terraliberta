@@ -3,6 +3,12 @@ background-color:cyan;
 
 }
 
+#cadre{
+background-color:blue;
+border-radius:20px; 20px;
+
+}
+
 #login{
 
    position:absolute; top:20%; left:15%;

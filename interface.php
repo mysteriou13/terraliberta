@@ -164,27 +164,27 @@ durée de vie du pad:
 
 <div style = "display:flex ">
 
-<div>
+<div  id = "cadre">
 <input type = "radio" name = "pad" value = "7days">
 7 jours
 </div>
 
-<div>
+<div id = "cadre">
 <input type = "radio" name = "pad" value = "1month">
 1 mois
 </div>
 
-<div>
+<div id = "cadre">
 <input type = "radio" name = "pad" value = "3month">
 3 mois
 </div>
 
-<div>
+<div id = "cadre">
 <input type = "radio" name = "pad" value = "6month">
 6 mois
 </div>
 
-<div>
+<div id = "cadre">
 <input type = "radio" name = "pad" value  = "1year">
 1 ans
 </div>
@@ -310,29 +310,42 @@ cr&eacute;er un tableur
 </div>
 
 <div style = "color:white;">
+
+<div>
  nom du tableur  <input type = "text" name = "idcalc">
 </br>
 durée de vie du  tableur
 </br>
+</div>
 
+ <div style = "display:flex;">
 
-
+<div id = "cadre">
 <input type = "radio" name = "calc" value = "7days">
 7 jours
+</div>
 
+<div id = "cadre">
 <input type = "radio" name = "calc" value = "1month">
 1 mois
+</div>
 
+<div id = "cadre">
 <input type = "radio" name = "calc" value = "3month">
 3 mois
+</div>
 
+<div id = "cadre">
 <input type = "radio" name = "calc" value = "6month">
 6 mois
+</div>
 
-
+<div id = "cadre">
 <input type = "radio" name = "calc" value  = "1year">
 1 ans
+</div>
 
+</div>
 
 <center>
 <input type = "submit" value = "cr&eacute;er un tableur"> 
