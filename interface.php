@@ -501,7 +501,13 @@ $type = "calc";
 
 $type = $mysqli->real_escape_string($type);
 
-$i = 'INSERT INTO url VALUES(NULL, "'.$pseudo.'", "'.$lien.'", "'.$l6.'","'.$type.'")';
+$jour = $mysqli->real_escape_string(date("d"));
+
+$mois = $mysqli->real_escape_string(date("m"));
+
+$anner = $mysqli->real_escape_string(date("y"));
+
+$i = 'INSERT INTO url VALUES(NULL, "'.$pseudo.'", "'.$lien.'", "'.$l6.'","'.$type.'","'.$jour.'", "'.$mois.'" , "'.$anner.'")';
 
 $mysqli->query($i);
 
