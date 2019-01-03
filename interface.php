@@ -100,6 +100,26 @@ $b = 2;
      
 ?>
 
+<script>
+
+function display(a){
+
+
+var dis = document.getElementById(a);
+
+
+if(dis.style.display == "none"){
+
+dis.style.display = "block";
+
+}else{
+dis.style.display  = "none";
+
+}
+
+}
+
+</script>
 
 <?php 
 include("test.php");
@@ -129,10 +149,13 @@ $select3 = $select2['name'];
 
 ?>
 
-<div id = "b" style = "padding-left:3%; padding-right:3%; display:flex; flex-wrap:wrap; justify-content: space-between; ">
+<ul  id = "b" style = "display:flex; flex-wrap:wrap;  justify-content:space-around; ">
+<ol>
+<ul>
+<button id = "b" style = "color:white; font-size:1.5em;";  onclick ="display('Pad')">pad</button>
+</ul>
 
-
-<div>
+<ul id = "Pad" style = "display:none">
 
 <form style  = "font-size:1.5em;"  action = "<?php $_SERVER['PHP_SELF'];?>" method = "post">
 
@@ -149,11 +172,11 @@ nouveau pad
 durée de vie du pad:
 </br>
 
-<div style = "display:flex ">
+<div style = "display:flex">
 
 <div>
 
-<input type = "radio" name = "pad" value = "7days">
+<input  id = "cardre" type = "radio" name = "pad" value = "7days">
 7 jours
 </div>
 
@@ -167,7 +190,7 @@ durée de vie du pad:
 3 mois
 </div>
 
-<div id = "cadre">
+<div- id = "cadre">
 <input type = "radio" name = "pad" value = "6month">
 6 mois
 </div>
@@ -181,13 +204,23 @@ durée de vie du pad:
 
 </div>
 
-<center>
  <input type =  "submit" value = "cr&eacute;er un pad">
-</center>
 
 </form>
-</div>
-<div>
+
+
+</ul>
+
+
+</ol>
+
+<ol>
+
+<ul>
+<button id = "b" style = "font-size:1.5em;" onclick = "display('Calc')">calc</button>
+</ul>
+
+<ul id = "Calc" style = "display:none">
 
 <form style = "font-size:1.5em;" action = "<?php $_SERVER['PHP_SELF']?>" method = "post">
 
@@ -239,15 +272,32 @@ durée de vie du  tableur
 
 </form>
 
-</div>
 
 
-</div>
+</ul>
+</ol>
+
+<ol>
+
+<ul> 
+
+<button id = "b" style = "font-size:1.5em;" onclick = "display('document')"> document </button>
+
+</ul>
+<ul id = "document" style = "display:none;">
+
+<?php 
+include("./membre/menu.php");
+?>
+
+</ul>
+
+</ol>
+
+</ul>
+
 
 <?php
-
-include("./membre/menu.php");
- 
 
 if(isset($_POST['pad']) && !empty($_POST['pad'])){
 
