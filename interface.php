@@ -129,29 +129,16 @@ $select3 = $select2['name'];
 
 ?>
 
+<div id = "b" style = "padding-left:3%; padding-right:3%; display:flex; flex-wrap:wrap; justify-content: space-between; ">
 
-<button id ="bparametre"  style = "display:block; background-color:blue; font-size:2em; color:white; border-radius:20px; 20px;" onclick = "dismenu('menuparametre','bparametre')">
--
-</button>
-
-  
-<div id = "menuparametre"; style = "display:block; border-radius:20px; 20px; background-color:blue; padding:1%; margin:1%;">
-
-<div id = "file" style = "margin-bottom:2%;  display:flex; flex-direction:column; justify-direction:space-around; border-radius: 20px 20px; font-size:2em;">
-
-<div style  = "display:flex; justify-content:space-between ">
 
 <div>
 
-<div style = "background-color:DarkBlue;  border-radius:20px; 20px; border:5px solid white; border-radius:20px 20px;">
-	
-<form  action = "<?php $_SERVER['PHP_SELF'];?>" method = "post">
+<form style  = "font-size:1.5em;"  action = "<?php $_SERVER['PHP_SELF'];?>" method = "post">
 
-<div style = "color:white; ">
+<div style = "color:white;">
 
-<center>
 nouveau pad
-</center>
 
 </div>
 
@@ -164,7 +151,8 @@ durée de vie du pad:
 
 <div style = "display:flex ">
 
-<div  id = "cadre">
+<div>
+
 <input type = "radio" name = "pad" value = "7days">
 7 jours
 </div>
@@ -197,8 +185,69 @@ durée de vie du pad:
  <input type =  "submit" value = "cr&eacute;er un pad">
 </center>
 
-<?php 
+</form>
+</div>
+<div>
 
+<form style = "font-size:1.5em;" action = "<?php $_SERVER['PHP_SELF']?>" method = "post">
+
+<div style = "color:white;">
+cr&eacute;er un tableur
+</div>
+
+<div style = "color:white;">
+
+<div>
+ nom du tableur  <input type = "text" name = "idcalc">
+</br>
+durée de vie du  tableur
+</br>
+</div>
+
+ <div style = "display:flex;">
+
+<div id = "cadre">
+<input type = "radio" name = "calc" value = "7days">
+7 jours
+</div>
+
+<div id = "cadre">
+<input type = "radio" name = "calc" value = "1month">
+1 mois
+</div>
+
+<div id = "cadre">
+<input type = "radio" name = "calc" value = "3month">
+3 mois
+</div>
+
+<div id = "cadre">
+<input type = "radio" name = "calc" value = "6month">
+6 mois
+</div>
+
+<div id = "cadre">
+<input type = "radio" name = "calc" value  = "1year">
+1 ans
+</div>
+
+</div>
+
+<center>
+<input type = "submit" value = "cr&eacute;er un tableur"> 
+</center>
+
+</form>
+
+</div>
+
+
+</div>
+
+<?php
+
+include("./membre/menu.php");
+ 
 
 if(isset($_POST['pad']) && !empty($_POST['pad'])){
 
@@ -298,63 +347,6 @@ echo "<span style = 'color:white'>".$_POST['idpad']." exsite d&eacute;j&agrave;"
 
 </div>
 
-</div>
-
-<div>
-<div style = "background-color:DarkBlue; border:5px solid white; border-radius:20px 20px;">
-
-<form action = "<?php $_SERVER['PHP_SELF']?>" method = "post">
-
-<div style = "color:white;">
-cr&eacute;er un tableur
-</div>
-
-<div style = "color:white;">
-
-<div>
- nom du tableur  <input type = "text" name = "idcalc">
-</br>
-durée de vie du  tableur
-</br>
-</div>
-
- <div style = "display:flex;">
-
-<div id = "cadre">
-<input type = "radio" name = "calc" value = "7days">
-7 jours
-</div>
-
-<div id = "cadre">
-<input type = "radio" name = "calc" value = "1month">
-1 mois
-</div>
-
-<div id = "cadre">
-<input type = "radio" name = "calc" value = "3month">
-3 mois
-</div>
-
-<div id = "cadre">
-<input type = "radio" name = "calc" value = "6month">
-6 mois
-</div>
-
-<div id = "cadre">
-<input type = "radio" name = "calc" value  = "1year">
-1 ans
-</div>
-
-</div>
-
-<center>
-<input type = "submit" value = "cr&eacute;er un tableur"> 
-</center>
-
-</div>
-
-</div>
-
 <?php 
 
 if( isset($_POST['idcalc']) && !empty($_POST['idcalc']) &&  isset($_POST['calc']) && !empty($_POST['calc'])){
@@ -396,7 +388,6 @@ echo "<span style = 'color:white'>".$_POST['idcalc']." exsite d&eacute;j&agrave;
 
 </div>
 </div>
-</form>
 </div>
 </div>
 
@@ -519,14 +510,10 @@ $mysqli->query($i);
 
 ?>
 
-<div style = "display:flex;">
 
-<div>
-<?php 
-include("./membre/menu.php");
-?>
  </div>
 
+</br>
 <div>
 <?php 
 
