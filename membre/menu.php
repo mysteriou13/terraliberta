@@ -137,7 +137,7 @@ if($a == 0){
 echo "<div>";
 echo "<button  onclick = newurl(this.id) id =";echo $a1; echo ">";
 
-echo "afficher";
+echo  $affiche3['name'];
 
 echo "</button>";
 echo "</div>";
