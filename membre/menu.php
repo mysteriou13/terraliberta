@@ -133,18 +133,27 @@ while($affiche3 = $affiche2->fetch_assoc()){
 
 if($a == 0){
 
-echo "<div onclick = newurl(this.id) id =";echo $a1; echo ">";
-echo $affiche3['name']; echo "</div>"; 
+
+echo "<div>";
+echo "<button  onclick = newurl(this.id) id =";echo $a1; echo ">";
+
+echo "afficher";
+
+echo "</button>";
+echo "</div>";
+
 
 }else{
 
-echo "<div  id =";echo $a1; echo ">";
-echo $affiche3['name']; echo "</div>"; 
+echo "<button  id =";echo $a1; echo ">";
+echo $affiche3['name']; echo "</button>"; 
 
 
 }
 
 }
+
+echo "</div>";
 
 ?>
 
@@ -170,18 +179,24 @@ $urla = "$_SERVER[REQUEST_URI]";
 
    $a1 = $affiche3['url'];
 
-  if($a == 0){
+ if($a == 0){
 
-echo "<div onclick = newurl(this.id) id =";echo $a1; echo ">";
-echo $affiche3['name']; echo "</div>";
+
+echo "<div>";
+echo "<button  onclick = newurl(this.id) id =";echo $a1; echo ">";
+
+echo $affiche3['name'];
+
+echo "</button>";
+echo "</div>";
+
 
 }else{
 
-echo "<div  id =";echo $a1; echo ">";
-echo $affiche3['name']; echo "</div>";
+echo "<button  id =";echo $a1; echo ">";
+echo $affiche3['name']; echo "</button>"; 
 
-
-}                                                                              
+}                                                                             
 
 }
                                                                                     
