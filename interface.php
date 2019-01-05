@@ -149,6 +149,20 @@ $select3 = $select2['name'];
 
 ?>
 
+<div id = "b" style = "font-size:1.5em;">
+<center>
+
+terraliberta
+</strong>
+</br>
+ permet d’afficher sur une même page différents sites web ou outils collaboratifs en ligne.
+</br>
+Vous pouvez ainsi présenter, communiquer et travailler à plusieurs sur différents documents en même temps:
+</center>
+
+</div>
+</br>
+
 <ul  id = "b" style = "display:flex; flex-wrap:wrap;  justify-content:space-around; ">
 <ol>
 <ul>
