@@ -47,21 +47,13 @@ if(!isset($_SESSION['pseudo'])){
 
 include("membre/login.php");
 
-}
-
-?>
-
-
-
-<?php
-
-if(!empty($_SESSION['pseudo'])){
+}else{
 
 include("interface.php");
 
 }
 
- ?>
+?>
 
 </body>
 
