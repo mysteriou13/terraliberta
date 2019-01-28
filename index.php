@@ -3,11 +3,7 @@
 <?php 
 session_start();
 
-$f = "./install/installcons.php";
-
-include($f);
-
-$d = "ff";
+include("./install/installcons.php");
 
 ?>
 
