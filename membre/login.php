@@ -18,7 +18,6 @@ include_once("./connect.php");
 
 terraliberta
 </strong>
-</br>
  permet d’afficher sur une même page différents sites web ou outils collaboratifs en ligne.
 </br>
 Vous pouvez ainsi présenter, communiquer et travailler à plusieurs sur différents documents en même temps:
