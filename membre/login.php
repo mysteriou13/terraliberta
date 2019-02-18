@@ -36,10 +36,6 @@ password<input type = "password" name = "pass">
 </form>
 </center>
 
-<center>
-</br>
-<a style = "color:white" href = "inscritpion.php"> inscription </a>
-</center>
 <?php 
 
  $day = substr(date("dmy"), 0, 2); 
