@@ -9,7 +9,7 @@ include("./install/installcons.php");
 
 <html>
 
-<body onload = "test()">
+<body>
 
 <?php
 
