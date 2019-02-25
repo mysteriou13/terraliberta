@@ -169,7 +169,7 @@ Vous pouvez ainsi présenter, communiquer et travailler à plusieurs sur différ
 <button id = "b" style = "color:white; font-size:1.5em;";  onclick ="display('Pad')">pad</button>
 </ul>
 
-<ul id = "Pad" style = "display:none">
+<ul id = "Pad" style = "border:1px solid white; border-radius:25px 25px; background-color:darkblue; display:none">
 
 <form style  = "font-size:1.5em;"  action = "<?php $_SERVER['PHP_SELF'];?>" method = "post">
 
@@ -188,9 +188,9 @@ durée de vie du pad:
 
 <div style = "display:flex">
 
-<div>
+<div id = "cadre">
 
-<input  id = "cardre" type = "radio" name = "pad" value = "7days">
+<input  type = "radio" name = "pad" value = "7days">
 7 jours
 </div>
 
@@ -204,7 +204,7 @@ durée de vie du pad:
 3 mois
 </div>
 
-<div- id = "cadre">
+<div id = "cadre">
 <input type = "radio" name = "pad" value = "6month">
 6 mois
 </div>
