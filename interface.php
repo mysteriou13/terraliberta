@@ -333,10 +333,6 @@ $c = $_POST['idpad'].$_SESSION['pseudo'].$b3;
 
 $c = $mysqli->real_escape_string($c);
 
-$calc  = 'INSERT INTO calc VALUES(NULL, "'.$date.'", "'.$c.'")';
-
-$mysqli->query($calc);
-
 }
 
 if(isset($_POST['calc']) && !empty($_POST['calc'])){
@@ -359,9 +355,6 @@ $c = $_POST['idcalc'].$_SESSION['pseudo'].$b3;
 
 $c = $mysqli->real_escape_string($c);
 
-$calc  = 'INSERT INTO calc VALUES(NULL, "'.$date.'", "'.$c.'")';
-
-$mysqli->query($calc);
 
 }
 if(isset($_POST['idpad']) && !empty($_POST['idpad']) && isset($_POST['pad']) && !empty($_POST['pad'])){
@@ -562,9 +555,17 @@ $mois = $mysqli->real_escape_string(date("m"));
 
 $anner = $mysqli->real_escape_string(date("y"));
 
-$i = 'INSERT INTO url VALUES(NULL, "'.$pseudo.'", "'.$lien.'", "'.$l6.'","'.$type.'","'.$jour.'", "'.$mois.'" , "'.$anner.'")';
+$date = date("dmy");
 
+$date = $mysqli->real_escape_string($date); 
+
+
+$i = 'INSERT INTO url VALUES(NULL, "'.$pseudo.'", "'.$lien.'", "'.$l6.'","'.$type.'","'.$jour.'", "'.$mois.'" , "'.$anner.'","'.$date.'")';
+
+if($b3 == 0){
 $mysqli->query($i);
+}
+
 
 }
 
