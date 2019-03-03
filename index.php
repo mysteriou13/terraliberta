@@ -9,7 +9,7 @@ include("./install/installcons.php");
 
 <html>
 
-<body>
+<body onload ="test()">
 
 <?php
 
@@ -50,8 +50,6 @@ include("interface.php");
 }
 
 ?>
-
-</body>
 
 </body>
 </html>

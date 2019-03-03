@@ -5,7 +5,7 @@
     <link  rel="stylesheet"  href="style.css" />
 
 <script src = "./js/onglet.js" language = "javascript" > </script>
-<script src="PdcFenetre.js" language="javascript"> </script>
+<script src="./PdcFenetre.js" language="javascript"> </script>
 <script src = "./js/affiche.js" language = "javascript"> </script>
 <script src = "./js/onglet.js" language = "javascript" > </script>
 

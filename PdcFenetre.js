@@ -1,6 +1,6 @@
 function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,ID,nb,name){
 		
-	//On créer un objet "Div" correspondant à notre fenetre
+	//On créer un objet "Div" correspondant à notre fenetre//
 	var fenetre = document.createElement("div");   
         var iframe  = document.createElement("iframe");
         var f1 =  document.getElementById("c");
@@ -36,21 +36,21 @@ function CreerPdcFenetre( titre, largeur, hauteur, posLeft, posTop, contenu,url,
           f2.className = "onglet_y onglet";
        }
 
-        f2.addEventListener("click",function ()changeclasse(nb,f2,url,iframe,f3));
-        f4.addEventListener("click",function ()changeclasse(nb,f2,url,iframe,f3));
-        f5.addEventListener("click",function () supelemet(f2,f4,url,ID,nb)); 
-        f8.addEventListener("click", function () myFunction(f3.src)); 
-        f10.addEventListener("click", function () block(f7) );
-        f1.appendChild(f2);
-        f2.appendChild(f4);
-        f2.appendChild(f6);
-        f2.appendChild(f5);
-        f2.appendChild(f10);
-        f2.appendChild(f7);
-        f7.appendChild(f9);
-        f7.appendChild(f8);
+        f2.addEventListener("click",function(){ changeclasse(nb,f2,url,iframe,f3)})
+        f4.addEventListener("click",function (){changeclasse(nb,f2,url,iframe,f3)})
+        f5.addEventListener("click",function (){ supelemet(f2,f4,url,ID,nb)})
+        f8.addEventListener("click", function (){ myFunction(f3.src)})
+        f10.addEventListener("click", function (){ block(f7)})
+        f1.appendChild(f2)
+        f2.appendChild(f4)
+        f2.appendChild(f6)
+        f2.appendChild(f5)
+        f2.appendChild(f10)
+        f2.appendChild(f7)
+        f7.appendChild(f9)
+        f7.appendChild(f8)
 
-}
+ }
 
 function block (a){
 

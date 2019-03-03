@@ -1,4 +1,3 @@
-<script>
 
 function affiche(){
 
@@ -21,4 +20,3 @@ r.innerHTML = "+";
 
 }
 
-</script>

@@ -1,4 +1,3 @@
-<script>
 
 function menu(pad,dis,id,c){
 
@@ -37,5 +36,4 @@ if(id == "menucalc"){
 }
 
 
-</script>
 
