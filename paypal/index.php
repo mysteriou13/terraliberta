@@ -65,15 +65,6 @@ duréer abonnement:</br>
 
 </br>
 
-<?php
-
-if(isset($_GET['abo'])){
-
-
-}
-
- ?>
-
 </form>
 
 <div  id = "a1" style = "display:none">
