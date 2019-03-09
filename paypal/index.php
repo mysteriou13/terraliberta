@@ -60,7 +60,6 @@ duréer abonnement:</br>
 
 <label> 6 mois 20 euro </label>  <input type = "radio" name = "abo" onclick = "c('a3')" id  = "1" > &nbsp; &nbsp;
 
-
 <label> 12 mois 30 euro </label>  <input type = "radio" name = "abo" onclick = "c('a4')" id = "1" > &nbsp; &nbsp;
 
 

@@ -4,8 +4,9 @@ session_start();
  
 include_once("../connect.php");
 
- $pseudo = "mysteriou";
- $a = 3;
+ $pseudo = $_SESSION['pseudo'];
+
+ $a = $_GET['nb'];
  
  $a = htmlspecialchars($a);
 
