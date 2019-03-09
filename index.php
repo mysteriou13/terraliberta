@@ -37,11 +37,10 @@ $display = "none";
 
 ?>
 
-
 <?php
-if(!isset($_SESSION['pseudo'])){
+if( empty($_SESSION['pseudo'])){
 
-include("membre/login.php");
+include("./membre/login.php");
 
 }else{
 

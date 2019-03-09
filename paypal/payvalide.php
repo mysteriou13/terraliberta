@@ -1,52 +1,62 @@
 <?php 
-
-session_start();
-
-include_once("../install/installcons.php");
-
+session_start(); 
+ include_once("../install/installcons.php");
+ 
 include_once("../connect.php");
 
-$header .= "POST /cgi-bin/webscr HTTP/1.0\r\n";
-$header .= "Host: ipnpb.paypal.com:443\r\n";
-$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
-$header .= "Content-Length: " . strlen($req) . "\r\n\r\n";
-$fp = fsockopen ('ipnpb.paypal.com', 443, $errno, $errstr, 30);
-
-$req = 'cmd=_notify-validate';
-
- foreach ($_POST as $key => $value) {
-$value = trim(urlencode(stripslashes($value)));
-$req .= "&$key=$value";
-}
-
- if (isset($fp)){
-fputs ($fp, $header . $req);
-while (!feof($fp)) {
-$res = fgets ($fp, 1024);
-if (strcmp ($res, "VERIFIED") == 0) {
-
- $a = $_POST['item_number'];
+ $pseudo = "mysteriou";
+ $a = 3;
+ 
+ $a = htmlspecialchars($a);
 
  $a2 = "+".$a."month";
 
- $date1 =  date(dmY, strtotime("$a2"));
+ $date =  date(dmy);
 
- $date1 = htmlspecialchars($date1);
+ $pseudo = $mysqli->real_escape_string($pseudo);  
+ 
+$abo =  'SELECT * FROM ebo WHERE pseudo = "'.$pseudo.'"';
+
+$abo1 = $mysqli->query($abo);
+ 
+$abo2 = $abo1->fetch_assoc();
+
+
+$jour = substr($abo2['date'], 0, 2);
+ 
+ $mois = substr($abo2['date'],2,2); 
+
+$anner = substr($abo2['date'],4,4);
+
+$abodate = $abo2['date'];
+
+
+if(date(m) >  $mois && date(y)  == $anner or $anner < date(y)){
+
+  $date1 =  date(dmy, strtotime("$a2"));
 
  $date1 = $mysqli->real_escape_string($date1);
 
- $pseudo = $_POST['pseudo'];
+ }
 
- $pseudo = htmlspecialchars($pseudo);
+ 
 
- $pseudo = $mysqli->real_escape_string($pseudo);  
+if(date(y) == $anner && $mois > date(m)){
 
- $u = 'UPDATE ebo SET temps = "'.$date1.'" WHERE pseudo = "'.$pseudo.'"'; 
+ 
+$dateDepart = $jour.'-'.$mois.'-'.$anner;
 
- $mysqli->query($u); 
+$dateDepartTimestamp = strtotime($dateDepart);
+ $dateFin  = date('d-m-y', strtotime($a2,$dateDepartTimestamp));
 
-}
-}
-}
+ $date1 = $mysqli->real_escape_string($dateFin);
+
+$date1 = str_replace("-","",$date1);
+
+ }
+ 
+$u = 'UPDATE ebo SET date = "'.$date1.'" WHERE pseudo = "'.$pseudo.'"'; 
+
+$mysqli->query($u); 
 
 ?>
