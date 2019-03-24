@@ -8,20 +8,21 @@ include_once("./connect.php");
 
 ?>
 
-<div class = "divcadre">
-
- <center>
-<form action = "<?php $_SERVER['PHP_SELF']?>" method = "POST">
-
-
+<div id ="titre">
+<center>
 <strong>
 
 terraliberta
 </strong>
- permet d’afficher sur une même page différents sites web ou outils collaboratifs en ligne.
-</br>
-Vous pouvez ainsi présenter, communiquer et travailler à plusieurs sur différents documents en même temps:
+</center>
+</div>
 
+<div class = "divcadre">
+
+ <center>
+<form action = "<?php $_SERVER['PHP_SELF']?>" method = "POST">
+<strong> terraliberta</strong> est un etnc(espace de travail numerique et coloboratif) qui regroupe plusieur  logciel en ligne dans une interface basé
+sur un systeme d'onglet
 </br>
 connection
 </br>
@@ -110,3 +111,4 @@ header("Location:index.php");
 ?>
 
 </div>
+
