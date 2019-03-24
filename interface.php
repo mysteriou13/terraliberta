@@ -149,7 +149,7 @@ $select3 = $select2['name'];
 
 ?>
 
-<div id = "b" style = "font-size:1.5em;">
+<div id = "titre" style = "font-size:1.5em;">
 <center>
 
 terraliberta
@@ -163,7 +163,7 @@ Vous pouvez ainsi présenter, communiquer et travailler à plusieurs sur différ
 </div>
 </br>
 
-<ul  id = "b" style = "display:flex; flex-wrap:wrap;  justify-content:space-around; ">
+<ul  class = "cadre" style = "display:flex; flex-wrap:wrap;  justify-content:space-around; ">
 <ol>
 <ul>
 <button id = "b" style = "color:white; font-size:1.5em;";  onclick ="display('Pad')">pad</button>
