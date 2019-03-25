@@ -234,7 +234,7 @@ durée de vie du pad:
 <button id = "b" style = "font-size:1.5em;" onclick = "display('Calc')">calc</button>
 </ul>
 
-<ul id = "Calc" style = "display:none">
+<ul id = "Calc" class = "calc" style = "display:none; ">
 
 <form style = "font-size:1.5em;" action = "<?php $_SERVER['PHP_SELF']?>" method = "post">
 
