@@ -65,9 +65,7 @@ $fp = fopen('installcons.php', 'w+');
 fwrite($fp, $file);
 fclose($fp);
 
-if(!file_exists("installcons;php")){
 
-}
 
 $table = "CREATE TABLE `url` (`id` int(11) NOT NULL,`pseudo` text NOT NULL, `url` text NOT NULL,`name` text NOT NULL,`type` text NOT NULL) 
 ENGINE=InnoDB DEFAULT CHARSET=latin1;
