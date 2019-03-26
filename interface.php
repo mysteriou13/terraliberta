@@ -578,7 +578,7 @@ $mysqli->query($i);
 <div>
 <?php 
 
- if(!empty($_GET)){
+ if(!empty($_GET['pad']) or !empty($_GET['pad']) or !empty($_GET['pad']) && !empty($_GET['calc']) ){
 include("onglet.php");
 
 }
