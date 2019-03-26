@@ -3,7 +3,7 @@
 <?php 
 session_start();
 
-include("./install/installcons.php");
+include("../admin/connect.php");
 
 ?>
 
@@ -15,16 +15,9 @@ include("./install/installcons.php");
 
 include("head.php");
 
-if(!file_exists("./install/installcons.php")){
-
-header("Location:./install");
-
-}else{
-
-
 include("connect.php");
 
-}
+
 
 if(!isset($_SESSION['pseudo'])){
 $display = "block";
