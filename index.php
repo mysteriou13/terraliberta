@@ -5,7 +5,7 @@
 <body onload ="test()">
 
 <?php
-
+session_start();
 include("head.php");
 
 include("connect.php");
