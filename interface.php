@@ -582,7 +582,8 @@ $mysqli->query($i);
 <div>
 <?php 
 
- if(!empty($_GET)){
+
+if($p3 >=2){
 include("onglet.php");
 
 }
