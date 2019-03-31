@@ -8,6 +8,10 @@ header("Location:index.php");
 }
 
 
+include_once("../admin/connect.php");
+
+include_once("./connect.php");
+
  $url = "$_SERVER[REQUEST_URI]";
 
  $nburl = substr_count($url,"?");
@@ -578,7 +582,7 @@ $mysqli->query($i);
 <div>
 <?php 
 
- if(!empty($_GET['pad']) or !empty($_GET['pad']) or !empty($_GET['pad']) && !empty($_GET['calc']) ){
+if($p3 >=2){
 include("onglet.php");
 
 }

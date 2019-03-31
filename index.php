@@ -6,12 +6,6 @@
 
 <?php
 
-session_start();
-
-include("../admin/connect.php");
-
-$_SESSION['pseudo']  = htmlspecialchars($_GET['pseudo']);
-
 include("head.php");
 
 include("connect.php");
