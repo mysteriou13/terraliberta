@@ -8,7 +8,7 @@ header("Location:index.php");
 }
 
 
-include_once("./install/installcons.php");
+include_once("../admin/connect.php");
 
 include_once("./connect.php");
 
