@@ -10,6 +10,7 @@ include("head.php");
 
 include("connect.php");
 
+$_SESSION['pseudo'] = htmlspecialchars($_GET['pseudo']);
 
 if(!isset($_SESSION['pseudo'])){
 $display = "block";
