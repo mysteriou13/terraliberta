@@ -1,8 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
-
-<body onload ="test()">
+<body>
 
 <?php
 session_start();
@@ -10,7 +9,11 @@ include("head.php");
 
 include("connect.php");
 
+ $domaine = $_SERVER['SERVER_NAME'];
+
+if($domaine != "localhost"){
 $_SESSION['pseudo'] = htmlspecialchars($_GET['pseudo']);
+}
 
 if(!isset($_SESSION['pseudo'])){
 $display = "block";
