@@ -39,6 +39,17 @@ include("interface.php");
 
 ?>
 
-<img  src = "./image/terraliberta.png" style = "height:auto; width:99%;">
+<img  src = "./image/terraliberta.png" style = "
+<?php 
+
+if(!empty($_SESSION['pseudo'])){
+
+echo 'display:none;';
+
+}
+
+ echo'height:auto; width:99%;'?>
+
+">
 </body>
 </html>
