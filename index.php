@@ -39,7 +39,6 @@ include("interface.php");
 
 ?>
 
-<img  src = "./image/terraliberta.png" style = "width:100%; height:100%;">
-
+<img  src = "./image/terraliberta.png" style = "height:auto; width:99%;">
 </body>
 </html>
