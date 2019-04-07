@@ -287,7 +287,6 @@ durée de vie du  tableur
 </form>
 
 
-
 </ul>
 </ol>
 
@@ -310,244 +309,38 @@ include("./membre/menu.php");
 
 </ul>
 
-
-<?php
-
-if(isset($_POST['pad']) && !empty($_POST['pad'])){
-
-$pad = $_POST['idpad']; 
-
-$pad = $mysqli->real_escape_string($pad);
-
-$b = "SELECT COUNT(*)name FROM url WHERE name= '$pad'";
-
-$b1 = $mysqli->query($b);
-
-$b2  = $b1->fetch_assoc();
-
-$b3 = $b2['name'];
-
-$date = date("dmy", strtotime($_POST['pad']));
-
-$c = $_POST['idpad'].$_SESSION['pseudo'].$b3; 
-
-$c = $mysqli->real_escape_string($c);
-
-}
-
-if(isset($_POST['calc']) && !empty($_POST['calc'])){
-
-$pad = $_POST['idcalc']; 
-
-$pad = $mysqli->real_escape_string($pad);
-
-$b = "SELECT COUNT(*)name FROM url WHERE name= '$pad'";
-
-$b1 = $mysqli->query($b);
-
-$b2  = $b1->fetch_assoc();
-
-$b3 = $b2['name'];
-
-$date = date("dmy", strtotime($_POST['calc']));
-
-$c = $_POST['idcalc'].$_SESSION['pseudo'].$b3; 
-
-$c = $mysqli->real_escape_string($c);
-
-
-}
-if(isset($_POST['idpad']) && !empty($_POST['idpad']) && isset($_POST['pad']) && !empty($_POST['pad'])){
-
-$pad = $_POST['idpad']; 
-
-$pad = $mysqli->real_escape_string($pad);
-
-$date = date("dmy", strtotime($_POST['pad']));
-
-$date = $mysqli->real_escape_string($date);
-
-$b = "SELECT COUNT(*)name FROM url WHERE name= '$pad'";
-
-$b1 = $mysqli->query($b);
-
-$b2  = $b1->fetch_assoc();
-
-$b3 = $b2['name'];
-
-if($b3 == 0){
-
-$c =$_POST['idpad'].$_SESSION['pseudo'].$b3; 
-
-$c = $mysqli->real_escape_string($c);
-
-echo "<script>";
-
-echo "var titre ='$c';";
-
-echo "var i = pad+/p/+titre;";
-
-echo "newurl(i)";
-
-echo "</script>";
-
-}else{
-
-echo "<span style = 'color:white'>".$_POST['idpad']." exsite d&eacute;j&agrave;"."</span></br>";
-
-}
-
-
-}
-
-?>
-
 </div>
-
-<?php 
-
-if( isset($_POST['idcalc']) && !empty($_POST['idcalc']) &&  isset($_POST['calc']) && !empty($_POST['calc'])){
-
-$pad = $_POST['idcalc'];
-
-$b = "SELECT COUNT(*)name FROM url WHERE name= '$pad'";
-
-$b1 = $mysqli->query($b);
-
-$b2  = $b1->fetch_assoc();
-
-$b3 = $b2['name'];
-
-$date = strtotime("dmy",$_POST['calc']);
-
-if($b3 == 0){
-
-$c =$_POST['idcalc'].$_SESSION['pseudo'].$b3;
-
-echo "<script>";
-
-echo "var titre ='$c';";
-
-echo "var i = calc+'/'+titre;";
-
-echo "newurl(i)";
-
-echo "</script>";
-
-}else{
-
-echo "<span style = 'color:white'>".$_POST['idcalc']." exsite d&eacute;j&agrave;"."</span> </br>";
-
-}
-}
-
-?>
 
 </div>
 </div>
 </div>
 </div>
+ </div>
 
 <?php 
 
 
- if(!empty($p9) ){
- while($p9 <= $p8-1){
+$pseudo = $mysqli->real_escape_string($_SESSION['pseudo']);
 
-$p9++;
+$name = null;
 
-$p5 = $p2[$p9];
+$lien = null;
 
-$p6 = explode("=",$p5);
+$type = null;
 
-$nburl2 = substr_count($url,"=");
+$fin = null;
 
+$nb = "SELECT COUNT(*)id  FROM url WHERE pseudo = '$pseudo'";
 
+$nb1 = $mysqli->query($nb);
 
-if($nburl2 >= 1 && !empty($p6[1])){
-$f2 = '"'.$p6[1].'"';
+$nb2 = $nb1->fetch_assoc(); 
 
-$titre = $p6[0];
+$nblien =  $nb2['id']+1;
 
-$lien = $p6[1];
-}
+$nblien = $pseudo.$nblien;
 
-if(!empty($lien)){
-
-$lien = $mysqli->real_escape_string($lien);
-
-$url = "SELECT COUNT(*)url FROM url WHERE pseudo= '$pseudo' AND url = '$lien'";
-
-$url1  = $mysqli->query($url);
-
-$url2 = $url1->fetch_assoc();
-
-}
-
-if($nburl2 >= 1 && !empty($p6[1])){
-
-$c =$p6[1];
-
-}else{
-
-$c = "x";
-
-}
-
-$l = array('https://etherpad.vecchionet.com/p/','https://ethercalc.vecchionet.com/');
-
-$l1 =  count($l);
-
-$nbl = -1;
-
-if(!empty($lien)){
-while($nbl < $l1-1){
-
-$nbl++;
-
-$l2 = $l[$nbl];
-
-$l3 = substr_count($lien,$l2);
-
-$l3."</br>";
-
-
-$l4 = str_replace($l2,"",$lien);
-
-$l5 = str_replace($pseudo,"",$l4);
-
-$l6  = str_replace($_SESSION['pseudo'],"",$l5);
-
-$l6  = str_replace(0,"",$l6);
-
-$l6  = str_replace("https://etherpad.vecchionet.com/p/","",$l6);
-
-
-}
-}
-
-if(isset($url2)){
-if($url2['url'] == 0 ){
-
-$nblien = substr_count($lien, 'etherpad'); 
-
-$nblien1 = substr_count($lien, 'ethercalc');
-
-
-if($nblien == 1){
-
-$type = "pad";
-
-}
-
-
-if($nblien1 == 1){
-
-$type = "calc";
-
-}
-
-$type = $mysqli->real_escape_string($type);
+$nomlien = $nb2['id'];
 
 $jour = $mysqli->real_escape_string(date("d"));
 
@@ -555,28 +348,66 @@ $mois = $mysqli->real_escape_string(date("m"));
 
 $anner = $mysqli->real_escape_string(date("y"));
 
-$date = date("dmy");
 
-$date = $mysqli->real_escape_string($date); 
+if(isset($_POST['pad']) && !empty($_POST['pad']) ){
+
+$type =  $_POST['pad'];
+
+$fin = date("dmy",strtotime($_POST['pad']));
+
+$lien = "https://etherpad.vecchionet.com/p/".$nblien;
+
+$name = $mysqli->real_escape_string($_POST['idpad']);
 
 
-$i = 'INSERT INTO url VALUES(NULL, "'.$pseudo.'", "'.$lien.'", "'.$l6.'","'.$type.'","'.$jour.'", "'.$mois.'" , "'.$anner.'","'.$date.'")';
+}
 
-if($b3 == 0){
-$mysqli->query($i);
+if(isset($_POST['calc']) && !empty($_POST['calc']) ){
+
+$type = $_POST['calc'];
+
+$fin = date("dmy",strtotime($_POST['pad']));
+
+
+$lien = "https://ethercalc.vecchionet.com/".$nblien;
+
+$name = $mysqli->real_escape_string($_POST['idcalc']);
+
+}
+
+$fin = $mysqli->real_escape_string($fin);
+
+$lien = $mysqli->real_escape_string($lien);
+
+$type =  $mysqli->real_escape_string($type);
+
+$u = 'INSERT INTO url  VALUES(NULL,"'.$pseudo.'","'.$lien.'","'.$name.'","'.$type.'","'.$jour.'","'.$mois.'", "'.$anner.'","'.$fin.'")';
+
+
+
+  if ($mysqli->query($u) === FALSE) {
+    printf("error requete");
 }
 
 
-}
+$verif = "SELECT COUNT(*)name FROM url WHERE pseudo = '.$pseudo.' && name = '.$name.'";
+
+$verif1 = $mysqli->query($verif);
+
+$verif2 = $verif1->fetch_assoc();
+
+
+if( isset($_POST['pad']) && !empty($_POST['pad']) && isset($_POST['idpad']) && !empty($_POST['idpad']) or isset($_POST['calc']) && !empty($_POST['calc']) && isset($_POST['idcalc']) && !empty($_POST['idcalc']) ){
+
+if($verif2['name'] == 0){
+
+$mysqli->query($u);
 
 }
-}
+
 }
 
 ?>
-
-
- </div>
 
 </br>
 <div>
