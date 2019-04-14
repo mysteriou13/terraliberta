@@ -17,8 +17,8 @@ terraliberta
 </center>
 </div>
 
-<div class = "divcadre">
 
+<div class = "divcadre" style = "height:100%;  width:100%;">
  <center>
 <form action = "<?php $_SERVER['PHP_SELF']?>" method = "POST">
 <strong> terraliberta</strong> est un etnc(espace de travail numerique et coloboratif) qui regroupe plusieur  logciel en ligne dans une interface basé
@@ -109,6 +109,9 @@ header("Location:index.php");
 
 }
 ?>
+</div>
 
+<div style = " margin-top:1%;  border:3px solid white; border-radius:5px ; ">
+<img src = "./image/terraliberta.png" style = "width:100%; height:100%;">
 </div>
 
